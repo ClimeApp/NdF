@@ -1,0 +1,13 @@
+---
+title: "Nacht der Forschung"
+---
+
+### Temperatur Anomalie 1816
+#### Ref. = 1799-1821
+![](images/ModERA-Annual-Temperature-Anomaly-1816-map.png)
+
+### Niederschlag Anomalie 1816
+#### Ref. = 1799-1821
+![](images/ModERA-Annual-Precipitation-Anomaly-1816-map.png)
+
+## Regression Timeseries & Bread Price Correlation (aus Artikel)

@@ -1,0 +1,29 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ClimeApp - Nacht der Forschung"
+  page-footer:
+    left: "© 2025 ClimeApp Team – University of Bern"
+    right: 
+      - icon: github
+        href: https://github.com/ClimeApp/ClimeApp_development
+  
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+    tools:
+      - icon: github
+        href: https://github.com/ClimeApp/ClimeApp_development
+
+format:
+  html:
+    css: styles.css
+    toc: true
+    toc-location: right
+
+
