@@ -7,5 +7,5 @@ Die Seite ist als statisches Projekt mit [Quarto](https://quarto.org/) erstellt.
 ## Links:
 
 -   ClimeApp Webanwendung: <https://mode-ra.unibe.ch/climeapp/>
--   Projektinformationen: <https://climeapp.github.io/>
+-   Projektinformationen: <https://github.com/ClimeApp/ClimeApp_development>
 -   Nacht der Forschung: <https://www.nachtderforschung.unibe.ch/>
