@@ -1,13 +1,33 @@
 ---
-title: "Nacht der Forschung"
+title: "ClimeApp - Klima trifft Geschichte"
 ---
+Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert. Hier geht es zur ClimeApp:
+
+<a href="https://mode-ra.unibe.ch/climeapp/" class="climeapp-button" target="_blank">
+  ClimeApp
+</a>
+<br>
+Hinweis: Für die vollständige Nutzung empfehlen wir die Anwendung auf einem Laptop oder Desktop.
+
+Hier: Beispiel anhand des Tambora 1815
+
+
+
+## Tambora 1815 – Klima sichtbar machen mit ClimeApp
 
 ### Temperatur Anomalie 1816
 #### Ref. = 1799-1821
-![](images/ModERA-Annual-Temperature-Anomaly-1816-map.png)
 
-### Niederschlag Anomalie 1816
-#### Ref. = 1799-1821
-![](images/ModERA-Annual-Precipitation-Anomaly-1816-map.png)
+<div style="margin-top: 1em;">
+  <button class="button" onclick="document.getElementById('anomaly').src='images/ModERA-Annual-Temperature-Anomaly-1816-map.png'">Temperatur</button>
+  <button class="button" onclick="document.getElementById('anomaly').src='images/ModERA-Annual-Precipitation-Anomaly-1816-map.png'">Niederschlag</button>
+</div>
+
+<div>
+  <img id="anomaly" src="images/ModERA-Annual-Temperature-Anomaly-1816-map.png" alt="Bild 1" width="600">
+</div>
+
 
 ## Regression Timeseries & Bread Price Correlation (aus Artikel)
+
+

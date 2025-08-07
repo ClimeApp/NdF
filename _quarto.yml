@@ -3,9 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "ClimeApp - Nacht der Forschung"
+  title: "ClimeApp"
+  favicon: "images/Logo_Favicon.ico"
   page-footer:
-    left: "© 2025 ClimeApp Team – University of Bern"
+    left: "© 2025 ClimeApp Team – Universität Bern"
     right: 
       - icon: github
         href: https://github.com/ClimeApp/ClimeApp_development
@@ -25,5 +26,3 @@ format:
     css: styles.css
     toc: true
     toc-location: right
-
-

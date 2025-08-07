@@ -1,9 +1,8 @@
 ---
-title: "About"
+title: "Über uns"
 ---
 
-About this site
 
-```{r}
-1 + 1
-```
+ClimeApp entstand aus der Zusammenarbeit eines Historikers, eines Klimawissenschaftlers und zwei Geographinnen: Richard Warren, Niklaus Bartlome, Noémie Wellinger und Tanja Falasca. Das Projekt wird im Rahmen des Forschungsprojekts <a href="https://www.hist.unibe.ch/forschung/forschungsprojekte/forschung_wirtschafts__sozial__und_umwelt_geschichte/vices/index_ger.html" target="_blank">VICES (Volcanic Impacts on Climate, Environment and Society)</a> am <a href="https:https://www.hist.unibe.ch/" target="_blank">Historischen Institut</a> und dem <a href="https://www.oeschger.unibe.ch/index_ger.html" target="_blank">Oeschger Centre for Climate Change Research (OCCR)</a> der Universität Bern entwickelt.
+
+![](images/project_team.jpg)
