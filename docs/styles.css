@@ -37,3 +37,11 @@ p {
 .button:hover {
   background-color: #127d5e;
 }
+
+/* Responsive Images */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

@@ -24,7 +24,7 @@ Hier: Beispiel anhand des Tambora 1815
 </div>
 
 <div>
-  <img id="anomaly" src="images/ModERA-Annual-Temperature-Anomaly-1816-map.png" alt="Bild 1" width="600">
+  <img id="anomaly" src="images/ModERA-Annual-Temperature-Anomaly-1816-map.png" class="responsive-image">
 </div>
 
 
