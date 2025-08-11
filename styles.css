@@ -34,11 +34,6 @@ p {
   box-shadow: none;
 }
 
-.button:hover {
-  background-color: #094030;
-  color: white;
-}
-
 .active-button {
   background-color: #094030;
   color: white;
