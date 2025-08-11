@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#temperatur-anomalie-1816" id="toc-temperatur-anomalie-1816" class="nav-link" data-scroll-target="#temperatur-anomalie-1816">Temperatur Anomalie 1816</a></li>
   </ul></li>
-  <li><a href="#regression-timeseries-bread-price-correlation-aus-artikel" id="toc-regression-timeseries-bread-price-correlation-aus-artikel" class="nav-link" data-scroll-target="#regression-timeseries-bread-price-correlation-aus-artikel">Regression Timeseries &amp; Bread Price Correlation (aus Artikel)</a></li>
+  <li><a href="#auswirkungen-auf-die-gesellschaft" id="toc-auswirkungen-auf-die-gesellschaft" class="nav-link" data-scroll-target="#auswirkungen-auf-die-gesellschaft">Auswirkungen auf die Gesellschaft</a></li>
   </ul>
 </nav>
     </div>
@@ -144,26 +144,121 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert. Hier geht es zur ClimeApp:</p>
-<p><a href="https://mode-ra.unibe.ch/climeapp/" class="climeapp-button" target="_blank"> ClimeApp </a> <br> Hinweis: Für die vollständige Nutzung empfehlen wir die Anwendung auf einem Laptop oder Desktop.</p>
-<p>Hier: Beispiel anhand des Tambora 1815</p>
+<p>Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert. Hier: Beispiel anhand des Tambora 1815</p>
+<p><strong>Hier geht es zur ClimeApp:</strong> <br> <a href="https://mode-ra.unibe.ch/climeapp/" class="climeapp-button" target="_blank"> ClimeApp </a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf einem Laptop oder Desktop.</p>
+</div>
+</div>
 <section id="tambora-1815-klima-sichtbar-machen-mit-climeapp" class="level2">
 <h2 class="anchored" data-anchor-id="tambora-1815-klima-sichtbar-machen-mit-climeapp">Tambora 1815 – Klima sichtbar machen mit ClimeApp</h2>
 <section id="temperatur-anomalie-1816" class="level3">
 <h3 class="anchored" data-anchor-id="temperatur-anomalie-1816">Temperatur Anomalie 1816</h3>
-<section id="ref.-1799-1821" class="level4">
-<h4 class="anchored" data-anchor-id="ref.-1799-1821">Ref. = 1799-1821</h4>
-<div style="margin-top: 1em;">
-<p><button class="button" onclick="document.getElementById('anomaly').src='images/ModERA-Annual-Temperature-Anomaly-1816-map.png'">Temperatur</button> <button class="button" onclick="document.getElementById('anomaly').src='images/ModERA-Annual-Precipitation-Anomaly-1816-map.png'">Niederschlag</button></p>
+<div style="margin-top:1em;">
+<p><button class="button" id="temperature-btn">Temperatur</button> <button class="button" id="precipitation-btn">Niederschlag</button> <button class="button" id="region-toggle-btn">🔍 Europa</button></p>
 </div>
 <div>
-<p><img id="anomaly" src="images/ModERA-Annual-Temperature-Anomaly-1816-map.png" class="responsive-image"></p>
+<p><img id="anomaly" src="images/temperature_anomaly_1816_global.png" class="responsive-image" alt="Anomalie 1816"></p>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let currentType   = 'temperature'; // 'temperature' | 'precipitation'
+  let currentRegion = 'global'; // 'global' | 'europe'
+
+  const srcMap = {
+    temperature: {
+      global: 'images/temperature_anomaly_1816_global.png',
+      europe: 'images/temperature_anomaly_1816_europe.png'
+    },
+    precipitation: {
+      global: 'images/precipitation_anomaly_1816_global.png',
+      europe: 'images/precipitation_anomaly_1816_europe.png'
+    }
+  };
+
+  const img   = document.getElementById('anomaly');
+  const btnT  = document.getElementById('temperature-btn');
+  const btnP  = document.getElementById('precipitation-btn');
+  const btnR  = document.getElementById('region-toggle-btn');
+
+  function updateRegionToggleLabel() {
+    if (currentRegion === 'global') {
+      btnR.textContent = '🔍 Europa';
+      btnR.setAttribute('aria-label', 'Zu Europa zoomen');
+    } else {
+      btnR.textContent = '🌍 Global';
+      btnR.setAttribute('aria-label', 'Zur Weltansicht wechseln');
+    }
+  }
+
+  function render() {
+    img.src = srcMap[currentType][currentRegion];
+
+    [btnT, btnP].forEach(b => b.classList.remove('active-button'));
+    (currentType === 'temperature' ? btnT : btnP).classList.add('active-button');
+
+    updateRegionToggleLabel();
+  }
+
+  // Events
+  btnT.addEventListener('click', () => { currentType = 'temperature'; render(); });
+  btnP.addEventListener('click', () => { currentType = 'precipitation'; render(); });
+  btnR.addEventListener('click', () => {
+    currentRegion = (currentRegion === 'global') ? 'europe' : 'global';
+    render();
+  });
+
+  // initial
+  render();
+});
+</script>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis ClimeApp
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die Regionen und Jahreszahlen noch viel flexibler anpassen sowie die Karten bearbeiten und downloaden.</p>
+</div>
+</div>
 </div>
 </section>
 </section>
-</section>
-<section id="regression-timeseries-bread-price-correlation-aus-artikel" class="level2">
-<h2 class="anchored" data-anchor-id="regression-timeseries-bread-price-correlation-aus-artikel">Regression Timeseries &amp; Bread Price Correlation (aus Artikel)</h2>
+<section id="auswirkungen-auf-die-gesellschaft" class="level2">
+<h2 class="anchored" data-anchor-id="auswirkungen-auf-die-gesellschaft">Auswirkungen auf die Gesellschaft</h2>
+<p>Der Ausbruch des Tambora beeinflusste auch die Gesellschaft signifikant. Eine der wichtigsten Auswirkungen war der Anstieg der Getreide- und Brotpreise.</p>
+<p><img src="images/bread.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis ClimeApp
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Lade in ClimeApp deine eigenen Datensätze hoch.</p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -599,15 +694,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-      <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ClimeApp/ClimeApp_development">
-      <i class="bi bi-github" role="img">
-</i> 
-    </a>
-  </li>  
-</ul>
-    </div>
+<p>This page is built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
   </div>
 </footer>
 
