@@ -119,6 +119,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#temperatur-anomalie-1816" id="toc-temperatur-anomalie-1816" class="nav-link" data-scroll-target="#temperatur-anomalie-1816">Temperatur Anomalie 1816</a></li>
   </ul></li>
   <li><a href="#auswirkungen-auf-die-gesellschaft" id="toc-auswirkungen-auf-die-gesellschaft" class="nav-link" data-scroll-target="#auswirkungen-auf-die-gesellschaft">Auswirkungen auf die Gesellschaft</a></li>
+  <li><a href="#teste-dein-wissen" id="toc-teste-dein-wissen" class="nav-link" data-scroll-target="#teste-dein-wissen">Teste dein Wissen</a></li>
   </ul>
 </nav>
     </div>
@@ -163,64 +164,24 @@ Hinweis
 <h2 class="anchored" data-anchor-id="tambora-1815-klima-sichtbar-machen-mit-climeapp">Tambora 1815 – Klima sichtbar machen mit ClimeApp</h2>
 <section id="temperatur-anomalie-1816" class="level3">
 <h3 class="anchored" data-anchor-id="temperatur-anomalie-1816">Temperatur Anomalie 1816</h3>
-<div style="margin-top:1em;">
-<p><button class="button" id="temperature-btn">Temperatur</button> <button class="button" id="precipitation-btn">Niederschlag</button> <button class="button" id="region-toggle-btn">🔍 Europa</button></p>
+<div class="button-row">
+<div class="button-group">
+<button class="button" id="temperature-btn">
+Temperatur
+</button>
+<button class="button" id="precipitation-btn">
+Niederschlag
+</button>
+</div>
+<div class="button-group">
+<button class="button-toggle" id="region-toggle-btn">
+🔍 Europa
+</button>
+</div>
 </div>
 <div>
 <p><img id="anomaly" src="images/temperature_anomaly_1816_global.png" class="responsive-image" alt="Anomalie 1816"></p>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  let currentType   = 'temperature'; // 'temperature' | 'precipitation'
-  let currentRegion = 'global'; // 'global' | 'europe'
-
-  const srcMap = {
-    temperature: {
-      global: 'images/temperature_anomaly_1816_global.png',
-      europe: 'images/temperature_anomaly_1816_europe.png'
-    },
-    precipitation: {
-      global: 'images/precipitation_anomaly_1816_global.png',
-      europe: 'images/precipitation_anomaly_1816_europe.png'
-    }
-  };
-
-  const img   = document.getElementById('anomaly');
-  const btnT  = document.getElementById('temperature-btn');
-  const btnP  = document.getElementById('precipitation-btn');
-  const btnR  = document.getElementById('region-toggle-btn');
-
-  function updateRegionToggleLabel() {
-    if (currentRegion === 'global') {
-      btnR.textContent = '🔍 Europa';
-      btnR.setAttribute('aria-label', 'Zu Europa zoomen');
-    } else {
-      btnR.textContent = '🌍 Global';
-      btnR.setAttribute('aria-label', 'Zur Weltansicht wechseln');
-    }
-  }
-
-  function render() {
-    img.src = srcMap[currentType][currentRegion];
-
-    [btnT, btnP].forEach(b => b.classList.remove('active-button'));
-    (currentType === 'temperature' ? btnT : btnP).classList.add('active-button');
-
-    updateRegionToggleLabel();
-  }
-
-  // Events
-  btnT.addEventListener('click', () => { currentType = 'temperature'; render(); });
-  btnP.addEventListener('click', () => { currentType = 'precipitation'; render(); });
-  btnR.addEventListener('click', () => {
-    currentRegion = (currentRegion === 'global') ? 'europe' : 'global';
-    render();
-  });
-
-  // initial
-  render();
-});
-</script>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -259,11 +220,24 @@ Hinweis ClimeApp
 </div>
 </div>
 </div>
+</section>
+<section id="teste-dein-wissen" class="level2">
+<h2 class="anchored" data-anchor-id="teste-dein-wissen">Teste dein Wissen</h2>
+<div id="quiz">
+
+</div>
+<button id="submit">
+Resultate anzeigen
+</button>
+<div id="results">
+
+</div>
 
 
 </section>
 
 </main> <!-- /main -->
+<script src="assets/script.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

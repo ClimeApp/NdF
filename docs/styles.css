@@ -25,10 +25,35 @@ p {
 }
 
 /* Button */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 10px;
+  padding: 7px;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5em;
+}
+
 .button {
   display: inline-block;
   background-color: lightgrey;
   padding: 5px;
+  text-decoration: none;
+  border: 2px solid black;
+  box-shadow: none;
+}
+
+.button-toggle {
+  display: inline-block;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
   text-decoration: none;
   border: 2px solid black;
   box-shadow: none;
@@ -45,4 +70,42 @@ p {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+
+
+/* Quiz */
+.question{
+  font-weight: bold;
+}
+
+.answers {
+    margin-bottom: 20px;
+}
+
+.answers label {
+  display: block;
+  margin: 0.25em 0;
+  cursor: pointer;
+}
+
+.answers input[type="radio"] {
+  margin-right: 0.6em;   /* Abstand zwischen Button und Text */
+}
+
+#submit{
+  display: inline-block;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: #094030;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  box-shadow: none;
+  border: 2px solid black;
+
+}
+#submit:hover{
+  background-color: #127d5e;
 }

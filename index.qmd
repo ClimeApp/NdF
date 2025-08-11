@@ -20,71 +20,21 @@ Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf eine
 ## Tambora 1815 – Klima sichtbar machen mit ClimeApp
 
 ### Temperatur Anomalie 1816
-<div style="margin-top:1em;">
-  <button class="button" id="temperature-btn">Temperatur</button>
-  <button class="button" id="precipitation-btn">Niederschlag</button>
-  <button class="button" id="region-toggle-btn">🔍 Europa</button>
-</div>
+
+::: {.button-row}
+::: {.button-group}
+<button class="button" id="temperature-btn">Temperatur</button>
+<button class="button" id="precipitation-btn">Niederschlag</button>
+:::
+::: {.button-group}
+<button class="button-toggle" id="region-toggle-btn">🔍 Europa</button>
+:::
+:::
 
 <div>
   <img id="anomaly" src="images/temperature_anomaly_1816_global.png"
        class="responsive-image" alt="Anomalie 1816">
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  let currentType   = 'temperature'; // 'temperature' | 'precipitation'
-  let currentRegion = 'global'; // 'global' | 'europe'
-
-  const srcMap = {
-    temperature: {
-      global: 'images/temperature_anomaly_1816_global.png',
-      europe: 'images/temperature_anomaly_1816_europe.png'
-    },
-    precipitation: {
-      global: 'images/precipitation_anomaly_1816_global.png',
-      europe: 'images/precipitation_anomaly_1816_europe.png'
-    }
-  };
-
-  const img   = document.getElementById('anomaly');
-  const btnT  = document.getElementById('temperature-btn');
-  const btnP  = document.getElementById('precipitation-btn');
-  const btnR  = document.getElementById('region-toggle-btn');
-
-  function updateRegionToggleLabel() {
-    if (currentRegion === 'global') {
-      btnR.textContent = '🔍 Europa';
-      btnR.setAttribute('aria-label', 'Zu Europa zoomen');
-    } else {
-      btnR.textContent = '🌍 Global';
-      btnR.setAttribute('aria-label', 'Zur Weltansicht wechseln');
-    }
-  }
-
-  function render() {
-    img.src = srcMap[currentType][currentRegion];
-
-    [btnT, btnP].forEach(b => b.classList.remove('active-button'));
-    (currentType === 'temperature' ? btnT : btnP).classList.add('active-button');
-
-    updateRegionToggleLabel();
-  }
-
-  // Events
-  btnT.addEventListener('click', () => { currentType = 'temperature'; render(); });
-  btnP.addEventListener('click', () => { currentType = 'precipitation'; render(); });
-  btnR.addEventListener('click', () => {
-    currentRegion = (currentRegion === 'global') ? 'europe' : 'global';
-    render();
-  });
-
-  // initial
-  render();
-});
-</script>
-
-
 
 ::: {.callout-tip collapse="true"}
 # Hinweis ClimeApp
@@ -100,3 +50,8 @@ Der Ausbruch des Tambora beeinflusste auch die Gesellschaft signifikant. Eine de
 # Hinweis ClimeApp
 Lade in ClimeApp deine eigenen Datensätze hoch.
 :::
+
+## Teste dein Wissen
+<div id="quiz"></div>
+<button id="submit">Resultate anzeigen</button>
+<div id="results"></div>

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - assets/**
 
 website:
   title: "ClimeApp"
@@ -24,3 +26,5 @@ format:
     css: styles.css
     toc: true
     toc-location: right
+    include-after-body:
+      - assets/script.html
