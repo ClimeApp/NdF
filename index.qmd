@@ -19,14 +19,14 @@ Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf eine
 
 
 # Tambora 1815 – Klima sichtbar machen mit ClimeApp
+Im April 1815 brach der indonesische Vulkan Tambora aus – einer der gewaltigsten Vulkanausbrüche der letzten Jahrhunderte. Die Explosion beeinflusste das Klima und die Gesellschaft weltweit. 
+
+
 
 ## Temperatur Anomalie 1816
+Die folgende Karte zeigt, wie stark Temperatur und Niederschlag im Sommer 1816 vom Normalzustand abwichen. Solche Abweichungen nennt man Anomalien. Grundlage dafür ist eine sogenannte Referenzperiode, die als Vergleichsklima dient. In diesem Fall wurde die Referenzperiode 1790 bis 1805 gewählt.
 
-ModE-RA JJA Precipitation Anomaly 1816
-
-ModE-RA JJA Temperature Anomaly 1816
-
-Ref. = 1790-1805
+Auf der Karte ist erkennbar, das grosse Teile Europas deutlich kühler und vielerorts auch nasser waren als üblich - eine Folge des Ausbruchs im Vorjahr.
 
 ::: {.button-row}
 ::: {.button-group}
@@ -49,9 +49,58 @@ Mit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die R
 :::
 
 ## Auswirkungen auf die Gesellschaft
-Der Ausbruch des Tambora beeinflusste auch die Gesellschaft signifikant. Eine der wichtigsten Auswirkungen war der Anstieg der Getreide- und Brotpreise. 
+Der Ausbruch des Tambora hatte nicht nur klimatische, sondern auch gesellschaftliche Folgen. Besonders deutlich zeigte sich dies beim Anstieg der Getreide- und Brotpreise. Die anhaltende Kälte und der viele Regen führten zu Missernten – und damit zu Hunger, Not und großer Unsicherheit in der Bevölkerung.
 
-![](images/bread.png)
+Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die Entwicklung der durchschnittlichen Sommertemperatur und der Brotpreise. Erkennbar ist, dass die Temperaturen ungewöhnlich niedrig waren, während die Brotpreise deutlich über dem Durchschnitt lagen.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%", out.height="auto"}
+library(readr)
+library(ggplot2)
+
+df <- read_delim("data/AverageBreadPrice.csv", show_col_types = FALSE)
+
+# Plot
+range_price <- range(df$Var1_Average_Bread_Price, na.rm = TRUE)
+range_temp <- range(df$Var2_MeanTemp, na.rm = TRUE)
+scale_factor <- diff(range_price) / diff(range_temp)
+offset <- range_price[1] - scale_factor * range_temp[1]
+
+
+
+ggplot(df, aes(x = Year)) +
+  annotate("rect",
+           xmin = 1812, xmax = 1819,
+           ymin = -Inf, ymax = Inf,
+           fill = "lemonchiffon", alpha = 0.8) +
+  geom_line(aes(y = Var1_Average_Bread_Price, color = "Brotpreis"), linewidth = 0.8) +
+  geom_line(aes(y = Var2_MeanTemp * scale_factor + offset, color = "Temperatur"),
+            linewidth = 0.8) +
+  
+  scale_y_continuous(
+    name = "Durchschnittlicher Brotpreis (Rp.)",
+    sec.axis = sec_axis(~ (. - offset) / scale_factor,
+                        name = "Temperatur (°C)",
+                        breaks = seq(floor(min(range_temp)), ceiling(max(range_temp)), 1))
+  ) +
+  
+  scale_x_continuous(
+    breaks = c(1750, 1775, 1800, 1816, 1825, 1850),
+    labels = c("1750", "1775", "1800", "1816", "1825", "1850")
+  ) +
+  
+  
+  scale_color_manual(name = NULL,
+                     values = c("Brotpreis" = "darkred",
+                                "Temperatur" = "royalblue4")) +
+  theme_minimal(base_size = 13) +
+  theme(
+    legend.position = "top",
+    legend.text = element_text(size = 16),
+    axis.title.y.left  = element_text(color = "darkred"),
+    axis.title.y.right = element_text(color = "royalblue4")
+  )
+```
+
 
 ::: {.callout-tip collapse="true"}
 # Hinweis ClimeApp

@@ -189,7 +189,12 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 // Interactive Map
 (function () {
+  
   // --- Basemaps ---
+  var esriGray = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 16, attribution: 'Tiles © Esri — Esri, DeLorme, NAVTEQ' }
+  );
   var imagery = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
     { maxZoom: 19, attribution: 'Tiles © Powered by Esri' }
@@ -204,7 +209,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   const startZoom   = 3;
   var map = L.map('drought-map', {
     scrollWheelZoom: true,
-    layers: [imagery]             // Start-Layer
+    layers: [esriGray]
   }).setView(startCenter, startZoom);
 
   // --- TYPE Farben und Labels ---
@@ -229,12 +234,16 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   Object.keys(typeColors).forEach(t => { layersByType[t] = L.layerGroup(); });
 
   // Basemap und Overlays Control
-  const baseLayers = { "Satellit": imagery, "OpenStreetMap": osm };
+  const baseLayers = {
+    "Esri Gray": esriGray,
+    "Satellit": imagery,
+    "OpenStreetMap": osm
+  };
   const overlays = {};
   Object.keys(layersByType).forEach(t => { overlays[typeLabels[t] || t] = layersByType[t]; });
   L.control.layers(baseLayers, overlays, { collapsed: false }).addTo(map);
 
-  // --- CSV laden & Marker verteilen ---
+  // --- CSV laden und Marker verteilen ---
   const csvPath = 'data/Observations_OctobertoMarch_1541_data.csv';
   let dataBounds = null;
 
@@ -263,7 +272,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
         `;
 
         const m = L.circleMarker([lat, lon], {
-          radius: 4.5,
+          radius: 5.5,
           weight: 1,
           opacity: 1,
           color: 'black',
@@ -323,5 +332,5 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     out.push(cur);
     return out;
   }
-})();
 
+})();
