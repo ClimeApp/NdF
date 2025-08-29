@@ -6,21 +6,25 @@ project:
     - data/**
 
 website:
-  title: "ClimeApp"
   favicon: "images/Logo_Favicon.ico"
   page-footer:
     left: "© 2025 ClimeApp Team – Universität Bern"
-    right: "This page is built with [Quarto](https://quarto.org/)"
+    right: |
+      This page is built with [Quarto](https://quarto.org/)
+      <a href="https://github.com/ClimeApp/ClimeApp_development" target="_blank">
+      <br>
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+
   
   navbar:
+    logo: images/Logo.png
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
         text: About
-    tools:
-      - icon: github
-        href: https://github.com/ClimeApp/ClimeApp_development
+    
 
 format:
   html:

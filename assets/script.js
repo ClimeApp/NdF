@@ -184,3 +184,144 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   }
 
 }
+
+
+
+// Interactive Map
+(function () {
+  // --- Basemaps ---
+  var imagery = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 19, attribution: 'Tiles © Powered by Esri' }
+  );
+  var osm = L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    { maxZoom: 19, attribution: '© OpenStreetMap' }
+  );
+
+  // --- Karte ---
+  const startCenter = [55.3, 8.2];
+  const startZoom   = 3;
+  var map = L.map('drought-map', {
+    scrollWheelZoom: true,
+    layers: [imagery]             // Start-Layer
+  }).setView(startCenter, startZoom);
+
+  // --- TYPE Farben und Labels ---
+  const typeColors = {
+    "ice_proxy":           "#5dbae8",
+    "lake_sediment_proxy": "#d0b943",
+    "tree_proxy":          "#117733",
+    "documentary_proxy":   "#44AA99",
+    "speleothem_proxy":    "#717126"
+  };
+  const typeLabels = {
+    "ice_proxy":"Gletschereis",
+    "lake_sediment_proxy":"Seesedimente",
+    "tree_proxy":"Bäume",
+    "documentary_proxy":"Dokumente",
+    "speleothem_proxy":"Speläotheme"
+  };
+  const colorForType = t => typeColors[(t||"").trim()] || "#555555";
+
+  // --- Overlays je TYPE ---
+  const layersByType = {};
+  Object.keys(typeColors).forEach(t => { layersByType[t] = L.layerGroup(); });
+
+  // Basemap und Overlays Control
+  const baseLayers = { "Satellit": imagery, "OpenStreetMap": osm };
+  const overlays = {};
+  Object.keys(layersByType).forEach(t => { overlays[typeLabels[t] || t] = layersByType[t]; });
+  L.control.layers(baseLayers, overlays, { collapsed: false }).addTo(map);
+
+  // --- CSV laden & Marker verteilen ---
+  const csvPath = 'data/Observations_OctobertoMarch_1541_data.csv';
+  let dataBounds = null;
+
+  fetch(csvPath)
+    .then(r => r.text())
+    .then(text => {
+      const headerLine = text.split(/\r?\n/).find(l => l.trim().length > 0) || '';
+      const delim = (headerLine.match(/;/g)||[]).length ? ';'
+                 : (headerLine.match(/\t/g)||[]).length ? '\t' : ',';
+      const rows = parseDSV(text, delim);
+
+      rows.forEach(row => {
+        const lat = parseFloat(row.LAT), lon = parseFloat(row.LON);
+        if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+
+        const t = (row.TYPE || '').trim();
+        const color = colorForType(t);
+        const popup = `
+          <div style="min-width:240px">
+            <strong>${row.NAME ?? 'Eintrag'}</strong><br/>
+            <em>${row.TYPE ?? ''}${row.VARIABLE ? ' · ' + row.VARIABLE : ''}</em><br/>
+            ${row.Reference_Proxy ? `<div style="margin-top:0.25rem">${row.Reference_Proxy}</div>` : ''}
+            ${row.Paper_Database ? `<div style="margin-top:0.25rem"><a href="${row.Paper_Database}" target="_blank" rel="noopener">Publikation</a></div>` : ''}
+            <div style="margin-top:0.25rem"><small>Lon/Lat: ${lon.toFixed(4)}, ${lat.toFixed(4)}</small></div>
+          </div>
+        `;
+
+        const m = L.circleMarker([lat, lon], {
+          radius: 4.5,
+          weight: 1,
+          opacity: 1,
+          color: 'black',
+          fillColor: color,
+          fillOpacity: 1
+        }).bindPopup(popup);
+
+        (layersByType[t] || layersByType["other_proxy"]).addLayer(m);
+      });
+
+      // Layer mit Inhalt anzeigen
+      Object.values(layersByType).forEach(lg => { if (lg.getLayers().length) lg.addTo(map); });
+
+      // Auf alle Daten zoomen
+      const all = L.featureGroup(Object.values(layersByType).filter(lg => lg.getLayers().length));
+      if (all.getLayers().length) {
+        dataBounds = all.getBounds();
+        map.fitBounds(dataBounds.pad(0.1));
+      }
+    });
+
+  // --- Home-Button ---
+  const homeControl = L.control({ position: 'topleft' });
+  homeControl.onAdd = function () {
+    const btn = L.DomUtil.create('button', 'leaflet-bar leaflet-control home-btn');
+    btn.innerHTML = '<i class="fa-solid fa-house"></i>';
+    btn.title = 'Zurück zur Startansicht';
+    L.DomEvent.on(btn, 'click', function (e) {
+      L.DomEvent.stopPropagation(e);
+      if (dataBounds && dataBounds.isValid()) map.fitBounds(dataBounds.pad(0.1));
+      else map.setView(startCenter, startZoom);
+    });
+    return btn;
+  };
+  homeControl.addTo(map);
+
+  // --- DSV-Parser ---
+  function parseDSV(text, delim) {
+    const lines = text.split(/\r?\n/).filter(l => l.trim().length);
+    if (!lines.length) return [];
+    const headers = splitDSVLine(lines[0], delim);
+    return lines.slice(1).map(line => {
+      const cells = splitDSVLine(line, delim), obj = {};
+      headers.forEach((h, i) => obj[h] = (cells[i] ?? '').trim());
+      return obj;
+    });
+  }
+  function splitDSVLine(line, delim) {
+    if (delim === '\t') return line.split('\t');
+    const out = []; let cur = '', q = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { if (q && line[i+1] === '"') { cur += '"'; i++; } else { q = !q; } }
+      else if (c === delim && !q) { out.push(cur); cur = ''; }
+      else { cur += c; }
+    }
+    out.push(cur);
+    return out;
+  }
+})();
+

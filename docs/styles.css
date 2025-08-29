@@ -8,6 +8,11 @@ p {
   background-color: #094030;
 }
 
+.navbar-brand img {
+  max-height: 80px;
+  width: auto;
+}
+
 /* ClimeApp-Button */
 .climeapp-button {
   display: inline-block;
@@ -111,7 +116,10 @@ p {
 }
 
 
-/* Home-Button in Leaflet-Map */
+
+
+/* Karte */
+/* Home-Button (Leaflet-Control) */
 .leaflet-control.home-btn {
   background: white;
   color: black;
@@ -121,17 +129,3 @@ p {
   cursor: pointer;
   border: none;
 }
-
-.drought-circle {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: red;
-  border: 1px solid #333;
-  opacity: 0.8;
-}
-.drought-circle:hover {
-  background: darkred;
-}
-
-
