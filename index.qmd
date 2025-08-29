@@ -2,6 +2,7 @@
 title: "ClimeApp - Klima trifft Geschichte"
 ---
 Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert.
+
 Hier: Beispiel anhand des Tambora 1815
 
 
@@ -17,9 +18,15 @@ Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf eine
 
 
 
-## Tambora 1815 – Klima sichtbar machen mit ClimeApp
+# Tambora 1815 – Klima sichtbar machen mit ClimeApp
 
-### Temperatur Anomalie 1816
+## Temperatur Anomalie 1816
+
+ModE-RA JJA Precipitation Anomaly 1816
+
+ModE-RA JJA Temperature Anomaly 1816
+
+Ref. = 1790-1805
 
 ::: {.button-row}
 ::: {.button-group}
@@ -55,3 +62,145 @@ Lade in ClimeApp deine eigenen Datensätze hoch.
 <div id="quiz"></div>
 <button id="submit">Resultate anzeigen</button>
 <div id="results"></div>
+
+
+
+
+# Dürre in Mitteleuropa 1540
+
+
+## Räumliche Verteilung der historischen Quellen
+
+<div id="drought-map" style="height: 520px; margin: 1rem 0;"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<script>
+(function () {
+
+  // 1) Karte erstellen
+ 
+  // Luftbild Layer
+  var imagery = L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    {
+      maxZoom: 19,
+      attribution: 'Tiles © Powered by Esri'
+    }
+  );
+  
+  // OSM Layer
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  });
+
+  // Karte erstellen
+  const startCenter = [55.3, 8.2];
+  const startZoom   = 3;
+  var map = L.map('drought-map', {
+    scrollWheelZoom: true,
+    layers: [imagery]   // Start-Layer
+  }).setView(startCenter, startZoom);
+
+  // Layer-Control hinzufügen
+  var baseLayers = {
+    "Satellit": imagery,
+    "OpenStreetMap": osm
+
+    };
+
+  L.control.layers(baseLayers,null,{collapsed:false}).addTo(map);
+
+  // 2) CSV laden (Auto-Delimiter) und Punkte zeichnen
+  const csvPath = 'data/Observations_ApriltoSeptember_1540_data.csv';
+  const pointsLayer = L.layerGroup().addTo(map);
+  let dataBounds = null;
+  
+  fetch(csvPath)
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status} beim Laden von ${csvPath}`);
+      return r.text();
+    })
+    .then(text => {
+      const headerLine = text.split(/\r?\n/).find(l => l.trim().length > 0) || '';
+      const delim = (headerLine.match(/;/g) || []).length > 0 ? ';'
+                 : (headerLine.match(/\t/g) || []).length > 0 ? '\t'
+                 : ',';
+      const rows = parseDSV(text, delim);
+
+      rows.forEach(row => {
+        const lat = parseFloat(row.LAT);
+        const lon = parseFloat(row.LON);
+        if (Number.isFinite(lat) && Number.isFinite(lon)) {
+          const popup = `
+            <div style="min-width:240px">
+              <strong>${row.NAME ?? 'Eintrag'}</strong><br/>
+              <em>${row.TYPE ?? ''}${row.VARIABLE ? ' · ' + row.VARIABLE : ''}</em><br/>
+              ${row.Reference_Proxy ? `<div style="margin-top:0.25rem">${row.Reference_Proxy}</div>` : ''}
+              ${row.Paper_Database ? `<div style="margin-top:0.25rem"><a href="${row.Paper_Database}" target="_blank" rel="noopener">Publikation</a></div>` : ''}
+              <div style="margin-top:0.25rem"><small>Lon/Lat: ${lon.toFixed(4)}, ${lat.toFixed(4)}</small></div>
+            </div>
+          `;
+          L.circleMarker([lat, lon], { radius: 4, opacity: 1, color: 'darkblue', fillColor: 'darkblue' })
+            .bindPopup(popup)
+            .addTo(pointsLayer);
+        }
+      });
+
+      if (pointsLayer.getLayers().length) {
+        dataBounds = pointsLayer.getBounds();
+        map.fitBounds(dataBounds.pad(0.1));
+      }
+    });
+
+// 3) Home-Button
+const homeControl = L.control({ position: 'topleft' });
+homeControl.onAdd = function () {
+  const btn = L.DomUtil.create('button', 'leaflet-bar leaflet-control home-btn');
+   btn.innerHTML = '<i class="fa-solid fa-house"></i>';
+  btn.title = 'Zurück zur Startansicht';
+
+  L.DomEvent.on(btn, 'click', function (e) {
+    L.DomEvent.stopPropagation(e);
+    if (dataBounds && dataBounds.isValid()) {
+      map.fitBounds(dataBounds.pad(0.1));
+    } else {
+      map.setView(startCenter, startZoom);
+    }
+  });
+
+  return btn;
+};
+homeControl.addTo(map);
+
+
+  // --- DSV-Helfer ---
+  function parseDSV(text, delim) {
+    const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+    if (lines.length === 0) return [];
+    const headers = splitDSVLine(lines[0], delim);
+    return lines.slice(1).map(line => {
+      const cells = splitDSVLine(line, delim);
+      const obj = {};
+      headers.forEach((h, i) => obj[h] = cells[i] !== undefined ? cells[i] : '');
+      return obj;
+    });
+  }
+  function splitDSVLine(line, delim) {
+    if (delim === '\t') return line.split('\t');
+    const res = []; let cur = '', inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (c === '"') { if (inQuotes && line[i+1] === '"') { cur += '"'; i++; } else inQuotes = !inQuotes; }
+      else if (c === delim && !inQuotes) { res.push(cur); cur = ''; }
+      else { cur += c; }
+    }
+    res.push(cur);
+    return res.map(s => s.trim());
+  }
+})();
+</script>

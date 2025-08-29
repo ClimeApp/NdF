@@ -18,14 +18,14 @@
     "href": "index.html",
     "title": "ClimeApp - Klima trifft Geschichte",
     "section": "",
-    "text": "Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert. Hier: Beispiel anhand des Tambora 1815\nHier geht es zur ClimeApp:   ClimeApp"
+    "text": "Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert.\nHier: Beispiel anhand des Tambora 1815\nHier geht es zur ClimeApp:   ClimeApp"
   },
   {
     "objectID": "index.html#tambora-1815-klima-sichtbar-machen-mit-climeapp",
     "href": "index.html#tambora-1815-klima-sichtbar-machen-mit-climeapp",
     "title": "ClimeApp - Klima trifft Geschichte",
     "section": "Tambora 1815 – Klima sichtbar machen mit ClimeApp",
-    "text": "Tambora 1815 – Klima sichtbar machen mit ClimeApp\n\nTemperatur Anomalie 1816\n\n\n\nTemperatur\n\n\nNiederschlag\n\n\n\n\n🔍 Europa\n\n\n\n\n\n\n\n\n\n\n\n\nHinweis ClimeApp\n\n\n\n\n\nMit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die Regionen und Jahreszahlen noch viel flexibler anpassen sowie die Karten bearbeiten und downloaden."
+    "text": "Tambora 1815 – Klima sichtbar machen mit ClimeApp\n\nTemperatur Anomalie 1816\nModE-RA JJA Precipitation Anomaly 1816\nModE-RA JJA Temperature Anomaly 1816\nRef. = 1790-1805\n\n\n\nTemperatur\n\n\nNiederschlag\n\n\n\n\n🔍 Europa\n\n\n\n\n\n\n\n\n\n\n\n\nHinweis ClimeApp\n\n\n\n\n\nMit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die Regionen und Jahreszahlen noch viel flexibler anpassen sowie die Karten bearbeiten und downloaden."
   },
   {
     "objectID": "index.html#tambora-1815-klima-sichtbar-machen-mit-climeapp-1",
@@ -61,5 +61,54 @@
     "title": "ClimeApp - Klima trifft Geschichte",
     "section": "Teste dein Wissen",
     "text": "Teste dein Wissen\n\n\n\n\nResultate anzeigen"
+  },
+  {
+    "objectID": "index.html#dürre-in-mitteleuropa",
+    "href": "index.html#dürre-in-mitteleuropa",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "1540 Dürre in Mitteleuropa",
+    "text": "1540 Dürre in Mitteleuropa"
+  },
+  {
+    "objectID": "index.html#temperatur-anomalie-1816",
+    "href": "index.html#temperatur-anomalie-1816",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Temperatur Anomalie 1816",
+    "text": "Temperatur Anomalie 1816\nModE-RA JJA Precipitation Anomaly 1816\nModE-RA JJA Temperature Anomaly 1816\nRef. = 1790-1805\n\n\n\nTemperatur\n\n\nNiederschlag\n\n\n\n\n🔍 Europa\n\n\n\n\n\n\n\n\n\n\n\n\nHinweis ClimeApp\n\n\n\n\n\nMit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die Regionen und Jahreszahlen noch viel flexibler anpassen sowie die Karten bearbeiten und downloaden."
+  },
+  {
+    "objectID": "index.html#interaktive-karte-der-beobachtungspunkte",
+    "href": "index.html#interaktive-karte-der-beobachtungspunkte",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Interaktive Karte der Beobachtungspunkte",
+    "text": "Interaktive Karte der Beobachtungspunkte"
+  },
+  {
+    "objectID": "index.html#interaktive-karte-der-dürre-belege-1540",
+    "href": "index.html#interaktive-karte-der-dürre-belege-1540",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Interaktive Karte der Dürre-Belege 1540",
+    "text": "Interaktive Karte der Dürre-Belege 1540"
+  },
+  {
+    "objectID": "index.html#interaktive-karte",
+    "href": "index.html#interaktive-karte",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Interaktive Karte",
+    "text": "Interaktive Karte"
+  },
+  {
+    "objectID": "index.html#dokumentierte-daten",
+    "href": "index.html#dokumentierte-daten",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Dokumentierte Daten",
+    "text": "Dokumentierte Daten"
+  },
+  {
+    "objectID": "index.html#räumliche-verteilung-der-historischen-quellen",
+    "href": "index.html#räumliche-verteilung-der-historischen-quellen",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Räumliche Verteilung der historischen Quellen",
+    "text": "Räumliche Verteilung der historischen Quellen"
   }
 ]

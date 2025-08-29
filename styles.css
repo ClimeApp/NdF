@@ -109,3 +109,29 @@ p {
 #submit:hover{
   background-color: #127d5e;
 }
+
+
+/* Home-Button in Leaflet-Map */
+.leaflet-control.home-btn {
+  background: white;
+  color: black;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+}
+
+.drought-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: red;
+  border: 1px solid #333;
+  opacity: 0.8;
+}
+.drought-circle:hover {
+  background: darkred;
+}
+
+
