@@ -55,26 +55,37 @@ Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die Entwicklung
 
 ![](images/bread_prices.png)
 
+# Dürre in Mitteleuropa 1540
+Die extreme Trockenheit des Jahres 1540 gilt als eines der gravierendsten Klimaereignisse in Mitteleuropa. Sie wirkte sich deutlich auf Landschaften, Ökosysteme und die damalige Bevölkerung aus. Rekonstruktionen aus historischen Quellen und paläoklimatischen Studien deuten darauf hin, dass über rund elf Monate hinweg in vielen Regionen Europas kaum Niederschlag fiel – ein Ereignis, das als Megadürre eingestuft werden könnte. Verantwortlich war eine außergewöhnlich stabile Hochdruckwetterlage („Omegalage“), die atlantische Tiefdruckgebiete blockierte und Mitteleuropa langanhaltend trockenes, heißes Wetter brachte, während im westlichen Russland gleichzeitig eher kühle und feuchte Bedingungen herrschten.
+
+::: {.button-row}
+::: {.button-group}
+<button class="button" id="temperature-btn">Temperatur</button>
+<button class="button" id="precipitation-btn">Niederschlag</button>
+:::
+::: {.button-group}
+<button class="button-toggle" id="region-toggle-btn">🔍 Europa</button>
+:::
+:::
+
+<div>
+  <img id="anomaly" src="images/temperature_anomaly_1816_global.png"
+       class="responsive-image" alt="Anomalie 1816">
+</div>
+## Räumliche Verteilung der Quellen
+Die folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540 (April bis September). Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist
+
+<div id="drought-map" style="height:520px; margin:1rem 0;"></div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 ::: {.callout-tip collapse="true"}
 # Hinweis ClimeApp
 Lade in ClimeApp deine eigenen Datensätze hoch.
 :::
 
-## Teste dein Wissen
+# Teste dein Wissen
 <div id="quiz"></div>
 <button id="submit">Resultate anzeigen</button>
 <div id="results"></div>
-
-
-
-
-# Dürre in Mitteleuropa 1540
-
-## Räumliche Verteilung der Quellen
-<div id="drought-map" style="height:520px; margin:1rem 0;"></div>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-

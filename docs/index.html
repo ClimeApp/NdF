@@ -117,12 +117,12 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#temperatur-anomalie-1816" id="toc-temperatur-anomalie-1816" class="nav-link" data-scroll-target="#temperatur-anomalie-1816">Temperatur Anomalie 1816</a></li>
   <li><a href="#auswirkungen-auf-die-gesellschaft" id="toc-auswirkungen-auf-die-gesellschaft" class="nav-link" data-scroll-target="#auswirkungen-auf-die-gesellschaft">Auswirkungen auf die Gesellschaft</a></li>
-  <li><a href="#teste-dein-wissen" id="toc-teste-dein-wissen" class="nav-link" data-scroll-target="#teste-dein-wissen">Teste dein Wissen</a></li>
   </ul></li>
   <li><a href="#dürre-in-mitteleuropa-1540" id="toc-dürre-in-mitteleuropa-1540" class="nav-link" data-scroll-target="#dürre-in-mitteleuropa-1540">Dürre in Mitteleuropa 1540</a>
   <ul class="collapse">
   <li><a href="#räumliche-verteilung-der-quellen" id="toc-räumliche-verteilung-der-quellen" class="nav-link" data-scroll-target="#räumliche-verteilung-der-quellen">Räumliche Verteilung der Quellen</a></li>
   </ul></li>
+  <li><a href="#teste-dein-wissen" id="toc-teste-dein-wissen" class="nav-link" data-scroll-target="#teste-dein-wissen">Teste dein Wissen</a></li>
   </ul>
 </nav>
     </div>
@@ -211,6 +211,38 @@ Hinweis ClimeApp
 <p>Der Ausbruch des Tambora hatte nicht nur klimatische, sondern auch gesellschaftliche Folgen. Besonders deutlich zeigte sich dies beim Anstieg der Getreide- und Brotpreise. Die anhaltende Kälte und der viele Regen führten zu Missernten – und damit zu Hunger, Not und großer Unsicherheit in der Bevölkerung.</p>
 <p>Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die Entwicklung der durchschnittlichen Sommertemperatur und der Brotpreise. Erkennbar ist, dass die Temperaturen ungewöhnlich niedrig waren, während die Brotpreise deutlich über dem Durchschnitt lagen.</p>
 <p><img src="images/bread_prices.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="dürre-in-mitteleuropa-1540" class="level1">
+<h1>Dürre in Mitteleuropa 1540</h1>
+<p>Die extreme Trockenheit des Jahres 1540 gilt als eines der gravierendsten Klimaereignisse in Mitteleuropa. Sie wirkte sich deutlich auf Landschaften, Ökosysteme und die damalige Bevölkerung aus. Rekonstruktionen aus historischen Quellen und paläoklimatischen Studien deuten darauf hin, dass über rund elf Monate hinweg in vielen Regionen Europas kaum Niederschlag fiel – ein Ereignis, das als Megadürre eingestuft werden könnte. Verantwortlich war eine außergewöhnlich stabile Hochdruckwetterlage („Omegalage“), die atlantische Tiefdruckgebiete blockierte und Mitteleuropa langanhaltend trockenes, heißes Wetter brachte, während im westlichen Russland gleichzeitig eher kühle und feuchte Bedingungen herrschten.</p>
+<div class="button-row">
+<div class="button-group">
+<button class="button" id="temperature-btn">
+Temperatur
+</button>
+<button class="button" id="precipitation-btn">
+Niederschlag
+</button>
+</div>
+<div class="button-group">
+<button class="button-toggle" id="region-toggle-btn">
+🔍 Europa
+</button>
+</div>
+</div>
+<div>
+<p><img id="anomaly" src="images/temperature_anomaly_1816_global.png" class="responsive-image" alt="Anomalie 1816"></p>
+</div>
+<section id="räumliche-verteilung-der-quellen" class="level2">
+<h2 class="anchored" data-anchor-id="räumliche-verteilung-der-quellen">Räumliche Verteilung der Quellen</h2>
+<p>Die folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540 (April bis September). Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist</p>
+<div id="drought-map" style="height:520px; margin:1rem 0;">
+
+</div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -228,8 +260,9 @@ Hinweis ClimeApp
 </div>
 </div>
 </section>
-<section id="teste-dein-wissen" class="level2">
-<h2 class="anchored" data-anchor-id="teste-dein-wissen">Teste dein Wissen</h2>
+</section>
+<section id="teste-dein-wissen" class="level1">
+<h1>Teste dein Wissen</h1>
 <div id="quiz">
 
 </div>
@@ -239,21 +272,8 @@ Resultate anzeigen
 <div id="results">
 
 </div>
-</section>
-</section>
-<section id="dürre-in-mitteleuropa-1540" class="level1">
-<h1>Dürre in Mitteleuropa 1540</h1>
-<section id="räumliche-verteilung-der-quellen" class="level2">
-<h2 class="anchored" data-anchor-id="räumliche-verteilung-der-quellen">Räumliche Verteilung der Quellen</h2>
-<div id="drought-map" style="height:520px; margin:1rem 0;">
-
-</div>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

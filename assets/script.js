@@ -50,6 +50,37 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  let currentType = 'temperature'; // 'temperature' | 'precipitation'
+
+  const srcMap = {
+    temperature: 'images/temperature_anomaly_1816_europe.png',
+    precipitation: 'images/precipitation_anomaly_1816_europe.png'
+  };
+
+  const img  = document.getElementById('anomaly');
+  const btnT = document.getElementById('temperature-btn');
+  const btnP = document.getElementById('precipitation-btn');
+
+  function render() {
+    img.src = srcMap[currentType];
+
+    [btnT, btnP].forEach(b => b.classList.remove('active-button'));
+    (currentType === 'temperature' ? btnT : btnP).classList.add('active-button');
+  }
+
+  // Events
+  btnT.addEventListener('click', () => { currentType = 'temperature'; render(); });
+  btnP.addEventListener('click', () => { currentType = 'precipitation'; render(); });
+
+  // initial
+  render();
+});
+
+
+
+
+
 var myQuestions = [
   {
     question: "Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
