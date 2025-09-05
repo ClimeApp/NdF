@@ -6,6 +6,7 @@ p {
 /* Navigation Bar */
 .navbar {
   background-color: #094030;
+  padding: 0px;
 }
 
 .navbar-brand img {
@@ -23,10 +24,6 @@ p {
   text-decoration: none;
   font-weight: bold;
   color: white;
-}
-
-.climeapp-button:hover {
-  background-color: #127d5e;
 }
 
 /* Button */
@@ -77,8 +74,6 @@ p {
   margin: 0 auto;
 }
 
-
-
 /* Quiz */
 .question{
   font-weight: bold;
@@ -122,9 +117,6 @@ p {
   box-shadow: none;
   border: 2px solid black;
 
-}
-.quiz-button:hover{
-  background-color: #127d5e;
 }
 
 #results{
