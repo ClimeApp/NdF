@@ -1,24 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-  let currentType   = 'temperature'; // 'temperature' | 'precipitation'
-  let currentRegion = 'global'; // 'global' | 'europe'
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//Tambora Maps
+(() => {
+  const img  = document.getElementById('anomaly');
+  const btnT = document.getElementById('temperature-btn');
+  const btnP = document.getElementById('precipitation-btn');
+  const btnR = document.getElementById('region-toggle-btn');
 
-  const srcMap = {
-    temperature: {
-      global: 'images/temperature_anomaly_1816_global.png',
-      europe: 'images/temperature_anomaly_1816_europe.png'
-    },
-    precipitation: {
-      global: 'images/precipitation_anomaly_1816_global.png',
-      europe: 'images/precipitation_anomaly_1816_europe.png'
-    }
-  };
+  if (!img || !btnT || !btnP) return;
 
-  const img   = document.getElementById('anomaly');
-  const btnT  = document.getElementById('temperature-btn');
-  const btnP  = document.getElementById('precipitation-btn');
-  const btnR  = document.getElementById('region-toggle-btn');
+  let currentType   = 'temperature';
+  let currentRegion = btnR ? 'global' : 'europe';
+
+  const srcMap = btnR
+    ? {
+        temperature: { global: 'images/temperature_anomaly_1816_global.png',
+                        europe: 'images/temperature_anomaly_1816_europe.png' },
+        precipitation: { global: 'images/precipitation_anomaly_1816_global.png',
+                         europe: 'images/precipitation_anomaly_1816_europe.png' }
+      }
+    : {
+        temperature: { europe: 'images/temperature_anomaly_1816_europe.png' },
+        precipitation:{ europe: 'images/precipitation_anomaly_1816_europe.png' }
+      };
 
   function updateRegionToggleLabel() {
+    if (!btnR) return;
     if (currentRegion === 'global') {
       btnR.textContent = '🔍 Europa';
       btnR.setAttribute('aria-label', 'Zu Europa zoomen');
@@ -30,57 +36,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function render() {
     img.src = srcMap[currentType][currentRegion];
-
     [btnT, btnP].forEach(b => b.classList.remove('active-button'));
     (currentType === 'temperature' ? btnT : btnP).classList.add('active-button');
-
     updateRegionToggleLabel();
   }
 
-  // Events
   btnT.addEventListener('click', () => { currentType = 'temperature'; render(); });
   btnP.addEventListener('click', () => { currentType = 'precipitation'; render(); });
-  btnR.addEventListener('click', () => {
-    currentRegion = (currentRegion === 'global') ? 'europe' : 'global';
-    render();
-  });
 
-  // initial
+  if (btnR) {
+    btnR.addEventListener('click', () => {
+      currentRegion = currentRegion === 'global' ? 'europe' : 'global';
+      render();
+    });
+  }
+
   render();
-});
+})();
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  let currentType = 'temperature'; // 'temperature' | 'precipitation'
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// Dürre Mitteleuropa Maps
+(() => {
+  const img  = document.getElementById('anomaly-1540');
+  const btnT = document.getElementById('temperature-btn-1540');
+  const btnP = document.getElementById('precipitation-btn-1540');
+
+  if (!img || !btnT || !btnP) return;
+
+  let currentType = 'temperature';
 
   const srcMap = {
-    temperature: 'images/temperature_anomaly_1816_europe.png',
-    precipitation: 'images/precipitation_anomaly_1816_europe.png'
+    temperature: 'images/temperature_anomaly_1540_europe.png',
+    precipitation: 'images/precipitation_anomaly_1540_europe.png'
   };
-
-  const img  = document.getElementById('anomaly');
-  const btnT = document.getElementById('temperature-btn');
-  const btnP = document.getElementById('precipitation-btn');
 
   function render() {
     img.src = srcMap[currentType];
-
     [btnT, btnP].forEach(b => b.classList.remove('active-button'));
     (currentType === 'temperature' ? btnT : btnP).classList.add('active-button');
   }
 
-  // Events
   btnT.addEventListener('click', () => { currentType = 'temperature'; render(); });
   btnP.addEventListener('click', () => { currentType = 'precipitation'; render(); });
 
-  // initial
   render();
-});
+})();
 
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+// Quiz
 
+// Fragen und Antworten
 var myQuestions = [
   {
     question: "Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
@@ -98,32 +109,41 @@ var myQuestions = [
       b: 'Das Jahr ohne Sommer',
       c: 'Das Jahr der Kälte'
     },
-    correctAnswer: 'c'
+    correctAnswer: 'b'
   },
   {
-    question: "Was verursachte die Abkühlung nach dem Ausbruch?",
+    question: "Welche Folgen hatte der Ausbruch in Europa?",
     answers: {
-      a: 'Antwort 1',
-      b: 'Antwort 2',
-      c: 'Antwort 3'
+      a: 'Missernten',
+      b: 'Günstige Brotpreise',
+      c: 'Wärmere Sommer'
     },
-    correctAnswer: 'c'
+    correctAnswer: 'a'
   },
   {
     question: "In welchem Jahr stiegen in der Schweiz die Brotpreise besonders stark?",
     answers: {
-      a: 'Antwort 1',
-      b: 'Antwort 2',
-      c: 'Antwort 3'
+      a: '1816',
+      b: '1815',
+      c: '1814'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: "Wie lange hielt die extreme Trockenheit von 1540 ungefähr an?",
+    answers: {
+      a: '2 Monate',
+      b: '5 Monate',
+      c: '11 Monate'
     },
     correctAnswer: 'c'
   },
     {
     question: "Aus welcher Zeitspanne stammen die ModE-RA-Daten?",
     answers: {
-      a: 'Antwort 1',
-      b: 'Antwort 2',
-      c: 'Antwort 3'
+      a: '1400 - 1800',
+      b: '1540 - 2000',
+      c: '1422 - 2008'
     },
     correctAnswer: 'c'
   }
@@ -136,22 +156,12 @@ var submitButton = document.getElementById('submit');
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
-
   function showQuestions(questions, quizContainer){
-    // we'll need a place to store the output and the answer choices
     var output = [];
     var answers;
-
-    // for each question...
     for(var i=0; i<questions.length; i++){
-      
-      // first reset the list of answers
       answers = [];
-
-      // for each available answer...
       for(letter in questions[i].answers){
-
-        // ...add an html radio button
         answers.push(
           '<label>'
             + '<input type="radio" name="question'+i+'" value="'+letter+'">'
@@ -159,65 +169,77 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
           + '</label>'
         );
       }
-
-      // add this question and its answers to the output
       output.push(
         '<div class="question">' + questions[i].question + '</div>'
         + '<div class="answers">' + answers.join('') + '</div>'
       );
     }
-
-    // finally combine our output list into one string of html and put it on the page
     quizContainer.innerHTML = output.join('');
   }
 
 
-  function showResults(questions, quizContainer, resultsContainer){
-    
-    // gather answer containers from our quiz
-    var answerContainers = quizContainer.querySelectorAll('.answers');
-    
-    // keep track of user's answers
-    var userAnswer = '';
-    var numCorrect = 0;
-    
-    // for each question...
-    for(var i=0; i<questions.length; i++){
+  // Resultate anzeigen
+function showResults(questions, quizContainer, resultsContainer){
 
-      // find selected answer
-      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+  let numCorrect = 0;
+
+  for (let i = 0; i < questions.length; i++) {
+    const container = answerContainers[i];
+
+    container.querySelectorAll('.correct-answer').forEach(n => n.remove());
+    container.querySelectorAll('label').forEach(l => {
+      l.classList.remove('is-correct','is-wrong');
+    });
+
+    const userAnswer = (container.querySelector('input[name=question'+i+']:checked') || {}).value;
+    const correct = questions[i].correctAnswer;
+
+    if (userAnswer === correct) {
+      numCorrect++;
+      const correctLabel = container.querySelector('input[value="'+correct+'"]').parentNode;
+      correctLabel.classList.add('is-correct');
+    } else {
       
-      // if answer is correct
-      if(userAnswer===questions[i].correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
-        
-        // color the answers green
-        answerContainers[i].style.color = '#094030';
+      if (userAnswer) {
+        const wrongLabel = container.querySelector('input[value="'+userAnswer+'"]').parentNode;
+        if (wrongLabel) wrongLabel.classList.add('is-wrong');
       }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[i].style.color = 'red';
-      }
-    }
 
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+      const correctLabel = container.querySelector('input[value="'+correct+'"]').parentNode;
+      if (correctLabel) correctLabel.classList.add('is-correct');
+    }
   }
 
-  // show questions right away
+  resultsContainer.innerHTML =
+    'Du hast ' + numCorrect + ' von ' + questions.length + ' Fragen richtig beantwortet.';
+}
+
+
   showQuestions(questions, quizContainer);
   
-  // on submit, show results
+  // Submit Button
   submitButton.onclick = function(){
     showResults(questions, quizContainer, resultsContainer);
   }
+  
+  var restartButton = document.getElementById('restart');
+
+function resetQuiz() {
+  showQuestions(questions, quizContainer);
+  resultsContainer.innerHTML = '';
+}
+
+restartButton.onclick = function() {
+  resetQuiz();
+};
 
 }
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // Interactive Map
 (function () {
   

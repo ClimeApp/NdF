@@ -1,11 +1,10 @@
 ---
 title: "ClimeApp - Klima trifft Geschichte"
 ---
-Entdecke das Klima der Vergangenheit - interaktiv, anschaulich und wissenschaftlich fundiert.
+Wie beeinflusste der Ausbruchs des Vulkans **Tambora 1815** das Weltklima - und welche Folgen hatte die extreme **Dürre in Mitteleuropa 1540**?
+Auf dieser Website kannst du diese zwei spannenden Fallbeispiele erkunden: interaktiv, anschaulich und wissenschaftlich fundiert. Teste danach dein Wissen in userem **Quiz**!
 
-Hier: Beispiel anhand des Tambora 1815
-
-
+Wer noch tiefer eintauchen möchte, kann mit der **ClimeApp** weitere Klimadaten erforschen.
 **Hier geht es zur ClimeApp:** <br>
 <a href="https://mode-ra.unibe.ch/climeapp/" class="climeapp-button" target="_blank">
   ClimeApp
@@ -13,7 +12,7 @@ Hier: Beispiel anhand des Tambora 1815
 
 ::: {.callout-note}
 # Hinweis
-Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf einem Laptop oder Desktop.
+Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf einem **Laptop oder Desktop**.
 :::
 
 
@@ -58,20 +57,18 @@ Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die Entwicklung
 # Dürre in Mitteleuropa 1540
 Die extreme Trockenheit des Jahres 1540 gilt als eines der gravierendsten Klimaereignisse in Mitteleuropa. Sie wirkte sich deutlich auf Landschaften, Ökosysteme und die damalige Bevölkerung aus. Rekonstruktionen aus historischen Quellen und paläoklimatischen Studien deuten darauf hin, dass über rund elf Monate hinweg in vielen Regionen Europas kaum Niederschlag fiel – ein Ereignis, das als Megadürre eingestuft werden könnte. Verantwortlich war eine außergewöhnlich stabile Hochdruckwetterlage („Omegalage“), die atlantische Tiefdruckgebiete blockierte und Mitteleuropa langanhaltend trockenes, heißes Wetter brachte, während im westlichen Russland gleichzeitig eher kühle und feuchte Bedingungen herrschten.
 
-::: {.button-row}
-::: {.button-group}
-<button class="button" id="temperature-btn">Temperatur</button>
-<button class="button" id="precipitation-btn">Niederschlag</button>
-:::
-::: {.button-group}
-<button class="button-toggle" id="region-toggle-btn">🔍 Europa</button>
-:::
-:::
+
+<div class="button-row">
+  <button class="button" id="temperature-btn-1540" type="button">Temperatur</button>
+  <button class="button" id="precipitation-btn-1540" type="button">Niederschlag</button>
+</div>
 
 <div>
-  <img id="anomaly" src="images/temperature_anomaly_1816_global.png"
-       class="responsive-image" alt="Anomalie 1816">
+  <img id="anomaly-1540" src="images/temperature_anomaly_1540_europe.png"
+       class="responsive-image" alt="Anomalie 1540">
 </div>
+
+
 ## Räumliche Verteilung der Quellen
 Die folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540 (April bis September). Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist
 
@@ -86,6 +83,11 @@ Lade in ClimeApp deine eigenen Datensätze hoch.
 :::
 
 # Teste dein Wissen
+
+
 <div id="quiz"></div>
-<button id="submit">Resultate anzeigen</button>
+<button id="submit" class="quiz-button">Resultate anzeigen</button>
+<button id="restart" class="quiz-button">Neu starten</button>
 <div id="results"></div>
+
+

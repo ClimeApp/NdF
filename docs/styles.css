@@ -94,15 +94,27 @@ p {
   cursor: pointer;
 }
 
-.answers input[type="radio"] {
-  margin-right: 0.6em;   /* Abstand zwischen Button und Text */
+/* richtige Antwort */
+.answers label.is-correct {
+  color: #0d7859; 
+  font-weight: bold;
 }
 
-#submit{
+/* falsche gewählte Antwort */
+.answers label.is-wrong {
+  color: #bd2916;
+  font-weight: bold;
+}
+
+.answers input[type="radio"] {
+  margin-right: 0.6em;
+}
+
+.quiz-button{
   display: inline-block;
-  border-radius: 10px;
+  border-radius: 7.5px;
   margin-top: 10px;
-  padding: 15px;
+  padding: 5px;
   background-color: #094030;
   text-decoration: none;
   font-weight: bold;
@@ -111,15 +123,18 @@ p {
   border: 2px solid black;
 
 }
-#submit:hover{
+.quiz-button:hover{
   background-color: #127d5e;
 }
 
-
-
+#results{
+  margin-top: 35px;
+  font-weight: bold;
+  background: lightgrey;
+}
 
 /* Karte */
-/* Home-Button (Leaflet-Control) */
+/* Home-Button */
 .leaflet-control.home-btn {
   background: white;
   color: black;
