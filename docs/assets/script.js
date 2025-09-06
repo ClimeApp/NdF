@@ -278,7 +278,7 @@ restartButton.onclick = function() {
   );
 
   // --- Karte ---
-  const startCenter = [30, 0];
+  const startCenter = [20, 0];
   const startZoom   = 1;
   var map = L.map('drought-map', {
     scrollWheelZoom: true,
@@ -314,7 +314,7 @@ restartButton.onclick = function() {
   };
   const overlays = {};
   Object.keys(layersByType).forEach(t => { overlays[typeLabels[t] || t] = layersByType[t]; });
-  L.control.layers(baseLayers, overlays, { collapsed: false }).addTo(map);
+  L.control.layers(baseLayers, overlays, { collapsed: true }).addTo(map);
 
   // --- CSV laden und Marker verteilen ---
   const csvPath = 'data/Observations_OctobertoMarch_1541_data.csv';
