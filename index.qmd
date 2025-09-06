@@ -83,10 +83,6 @@ Die folgende Karte zeigt die **räumliche Verteilung der ModE-RA-Quellen für da
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-::: {.callout-tip collapse="true"}
-# Hinweis ClimeApp
-Lade in ClimeApp deine eigenen Datensätze hoch.
-:::
 
 # Teste dein Wissen
 
