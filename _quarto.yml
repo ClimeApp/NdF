@@ -11,7 +11,7 @@ website:
     left: "© 2025 ClimeApp Team – Universität Bern"
     right: |
       This page is built with [Quarto](https://quarto.org/)
-      <a href="https://github.com/ClimeApp/ClimeApp_development" target="_blank">
+      <a href="https://github.com/ClimeApp/NdF" target="_blank">
       <br>
         <i class="fa-brands fa-github"></i> GitHub
       </a>
