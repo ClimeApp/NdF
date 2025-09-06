@@ -74,7 +74,7 @@ Die **extreme Trockenheit des Jahres 1540** gilt als **eines der gravierendsten 
 ## Räumliche Verteilung der Quellen
 Die folgende Karte zeigt die **räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540**. Eingetragen sind unterschiedliche **Klimaarchive**, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: **Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme)**. Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist
 
-<div id="drought-map" style="height:520px; margin:1rem 0;"></div>
+<div id="drought-map" style="height:350px; margin:1rem 0;"></div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">

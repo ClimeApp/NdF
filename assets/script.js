@@ -278,8 +278,8 @@ restartButton.onclick = function() {
   );
 
   // --- Karte ---
-  const startCenter = [55.3, 8.2];
-  const startZoom   = 3;
+  const startCenter = [30, 0];
+  const startZoom   = 1;
   var map = L.map('drought-map', {
     scrollWheelZoom: true,
     layers: [esriGray]
