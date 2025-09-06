@@ -2,7 +2,7 @@
 title: "ClimeApp - Klima trifft Geschichte"
 ---
 Wie beeinflusste der Ausbruchs des Vulkans **Tambora 1815** das Weltklima - und welche Folgen hatte die extreme **Dürre in Mitteleuropa 1540**?
-Auf dieser Website kannst du diese zwei spannenden Fallbeispiele erkunden: interaktiv, anschaulich und wissenschaftlich fundiert. Teste danach dein Wissen in userem **Quiz**!
+Auf dieser Website kannst du diese zwei spannenden Fallbeispiele erkunden: interaktiv, anschaulich und wissenschaftlich fundiert. Teste danach dein Wissen in unserem **Quiz**!
 
 Wer noch tiefer eintauchen möchte, kann mit der **ClimeApp** weitere Klimadaten erforschen.
 **Hier geht es zur ClimeApp:** <br>
@@ -22,10 +22,10 @@ Im April 1815 brach der **indonesische Vulkan Tambora** aus – einer der gewalt
 
 
 
-## Temperatur Anomalie 1816
+## Temperaturanomalie 1816
 Die folgende Karte zeigt, wie stark **Temperatur und Niederschlag** im **Sommer 1816** vom Normalzustand abwichen. Solche Abweichungen nennt man **Anomalien**. Grundlage dafür ist eine sogenannte **Referenzperiode**, die als Vergleichsklima dient. In diesem Fall wurde die Referenzperiode **1790 bis 1805** gewählt.
 
-Auf der Karte ist erkennbar, das grosse Teile Europas deutlich kühler und vielerorts auch nasser waren als üblich - eine Folge des Ausbruchs im Vorjahr.
+Auf der Karte ist erkennbar, dass grosse Teile Europas deutlich kühler und vielerorts auch nasser waren als üblich - eine Folge des Ausbruchs des Vulkans im Vorjahr.
 
 ::: {.button-row}
 ::: {.button-group}
@@ -44,7 +44,7 @@ Auf der Karte ist erkennbar, das grosse Teile Europas deutlich kühler und viele
 
 ::: {.callout-tip collapse="true"}
 # Hinweis ClimeApp
-Mit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die Regionen und Jahreszahlen noch viel flexibler anpassen sowie die Karten bearbeiten und downloaden.
+Mit ClimeApp stehen dir noch viele weitere Analysemöglichkeiten offen: Korrelation, Regression, SEA und viele mehr. Du kannst Regionen und Zeiträume frei wählen, Karten individuell gestalten – zum Beispiel Ländergrenzen einblenden oder eigene Punkte und Flächen markieren – und die Ergebnisse direkt herunterladen.
 :::
 
 ## Auswirkungen auf die Gesellschaft
@@ -76,7 +76,7 @@ Die **extreme Trockenheit des Jahres 1540** gilt als **eines der gravierendsten 
 
 
 ## Räumliche Verteilung der Quellen
-Die folgende Karte zeigt die **räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540**. Eingetragen sind unterschiedliche **Klimaarchive**, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: **Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme)**. Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist
+Die folgende Karte zeigt die **räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540**. Eingetragen sind unterschiedliche **Klimaarchive**, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: **Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme)**. Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen sind.
 
 <div id="drought-map" style="height:350px; margin:1rem 0;"></div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">

@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "ClimeApp - Klima trifft Geschichte",
     "section": "",
-    "text": "Wie beeinflusste der Ausbruchs des Vulkans Tambora 1815 das Weltklima - und welche Folgen hatte die extreme Dürre in Mitteleuropa 1540? Auf dieser Website kannst du diese zwei spannenden Fallbeispiele erkunden: interaktiv, anschaulich und wissenschaftlich fundiert. Teste danach dein Wissen in userem Quiz!\nWer noch tiefer eintauchen möchte, kann mit der ClimeApp weitere Klimadaten erforschen. Hier geht es zur ClimeApp:   ClimeApp"
+    "text": "Wie beeinflusste der Ausbruchs des Vulkans Tambora 1815 das Weltklima - und welche Folgen hatte die extreme Dürre in Mitteleuropa 1540? Auf dieser Website kannst du diese zwei spannenden Fallbeispiele erkunden: interaktiv, anschaulich und wissenschaftlich fundiert. Teste danach dein Wissen in unserem Quiz!\nWer noch tiefer eintauchen möchte, kann mit der ClimeApp weitere Klimadaten erforschen. Hier geht es zur ClimeApp:   ClimeApp"
   },
   {
     "objectID": "index.html#tambora-1815-klima-sichtbar-machen-mit-climeapp",
@@ -116,7 +116,7 @@
     "href": "index.html#räumliche-verteilung-der-quellen",
     "title": "ClimeApp - Klima trifft Geschichte",
     "section": "Räumliche Verteilung der Quellen",
-    "text": "Räumliche Verteilung der Quellen\nDie folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540. Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist"
+    "text": "Räumliche Verteilung der Quellen\nDie folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540. Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen sind."
   },
   {
     "objectID": "quellen.html",
@@ -124,5 +124,12 @@
     "title": "Quellen und Weiteres",
     "section": "",
     "text": "Möchtest du tiefer in ClimeApp und die Klimarekonstruktion eintauchen? Unsere Forschung ist in Fachzeitschriften veröffentlicht. Eine Auflistung der Publikationen findest du hier:\nR. Warren, N. Bartlome, N. Wellinger, J. Franke, R. Hand, S. Brönnimann, H. Huhtamaa: ClimeApp: data processing tool for monthly, global climate data from the ModE-RA palaeo-reanalysis, 1422 to 2008 CE. CP 20, 2645–2662 (2024).  Zur Publikation\nV. Valler, J. Franke, Y. Brugnara, E. Samakinwa, R. Hand, E. Lundstad, A.-M. Burgdorf, L. Lipfert, A. R. Friedman, S. Brönnimann: ModE-RA: a global monthly paleo-reanalysis of the modern era 1421 to 2008. Scientific Data 11 (2024).  Zur Publikation\nR. Hand, E. Samakinwa, L. Lipfert, and S. Brönnimann: ModE-Sim – a medium-sized atmospheric general circulation model (AGCM) ensemble to study climate variability during the modern era (1420 to 2009). GMD 16 (2023).  Zur Publikation"
+  },
+  {
+    "objectID": "index.html#temperaturanomalie-1816",
+    "href": "index.html#temperaturanomalie-1816",
+    "title": "ClimeApp - Klima trifft Geschichte",
+    "section": "Temperaturanomalie 1816",
+    "text": "Temperaturanomalie 1816\nDie folgende Karte zeigt, wie stark Temperatur und Niederschlag im Sommer 1816 vom Normalzustand abwichen. Solche Abweichungen nennt man Anomalien. Grundlage dafür ist eine sogenannte Referenzperiode, die als Vergleichsklima dient. In diesem Fall wurde die Referenzperiode 1790 bis 1805 gewählt.\nAuf der Karte ist erkennbar, dass grosse Teile Europas deutlich kühler und vielerorts auch nasser waren als üblich - eine Folge des Ausbruchs des Vulkans im Vorjahr.\n\n\n\nTemperatur\n\n\nNiederschlag\n\n\n\n\n🔍 Europa\n\n\n\n\n\n\n\n\n\n\n\n\nHinweis ClimeApp\n\n\n\n\n\nMit ClimeApp stehen dir noch viele weitere Analysemöglichkeiten offen: Korrelation, Regression, SEA und viele mehr. Du kannst Regionen und Zeiträume frei wählen, Karten individuell gestalten – zum Beispiel Ländergrenzen einblenden oder eigene Punkte und Flächen markieren – und die Ergebnisse direkt herunterladen."
   }
 ]
