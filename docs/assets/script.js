@@ -161,7 +161,7 @@ var myQuestions = [
     answers: {
       a: '1400 - 1800',
       b: '1540 - 2000',
-      c: '1422 - 2008'
+      c: '1421 - 2008'
     },
     correctAnswer: 'c'
   }
