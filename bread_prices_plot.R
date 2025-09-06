@@ -9,8 +9,6 @@ range_temp <- range(df$Var2_MeanTemp, na.rm = TRUE)
 scale_factor <- diff(range_price) / diff(range_temp)
 offset <- range_price[1] - scale_factor * range_temp[1]
 
-
-
 ggplot(df, aes(x = Year)) +
   annotate("rect",
            xmin = 1812, xmax = 1819,
@@ -34,8 +32,11 @@ ggplot(df, aes(x = Year)) +
   
   scale_color_manual(name = NULL,
                      values = c("Brotpreis" = "darkred",
-                                "Temperatur" = "royalblue4")) +
+                                "Temperatur" = "royalblue4"),
+                     labels = c("Temperatur" = "Temperatur",
+                                "Brotpreis" = "Brotpreis (gelaggt)")) +
   theme_minimal(base_size = 15) +
+  labs(x = "Jahr") +
   theme(
     legend.position = "top",
     legend.text = element_text(size = 15),
@@ -46,4 +47,49 @@ ggplot(df, aes(x = Year)) +
   ) -> p
 
 ggsave("images/bread_prices.png", p,
+       width = 8, height = 5, dpi = 300)
+
+
+
+
+df <- read_delim("data/vulkane.csv", show_col_types = FALSE)
+
+range_temp <- range(df$Var1_Mean, na.rm = TRUE)   # Durchschnittliche Temperatur
+range_saod <- range(df$SAOD, na.rm = TRUE)        # Annual global mean SAOD
+
+scale_factor <- diff(range_temp) / diff(range_saod)
+offset <- range_temp[1] - scale_factor * range_saod[1]
+
+ggplot(df, aes(x = Year)) +
+  geom_line(aes(y = Var1_Mean, color = "Temperatur"), linewidth = 0.8) +
+  geom_line(aes(y = SAOD * scale_factor + offset, color = "SAOD"), linewidth = 0.8) +
+  
+  scale_y_continuous(
+    name = "Temperatur (°C)",
+    sec.axis = sec_axis(~ (. - offset) / scale_factor,
+                        name = "Stratosphärische Aerosole (SAOD)")
+  ) +
+  scale_x_continuous(
+    breaks = seq(1450, 2000, 100),
+    limits = c(1422, 2008)
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c("Temperatur" = "royalblue4",
+               "SAOD"       = "#996600"),
+    labels = c("Temperatur" = "Temperatur",
+               "SAOD" = "Stratosphärische Aerosole (SAOD)")
+  ) +
+  labs(x = "Jahr") +
+  theme_minimal(base_size = 15) +
+  theme(
+    legend.position    = "top",
+    legend.text        = element_text(size = 15),
+    axis.text.x        = element_text(size = 14),
+    axis.text.y        = element_text(size = 15),
+    axis.title.y.left  = element_text(color = "royalblue4"),
+    axis.title.y.right = element_text(color = "#664400")
+  ) -> p
+
+ggsave("images/vulkane.png", p,
        width = 8, height = 5, dpi = 300)

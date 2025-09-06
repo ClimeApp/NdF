@@ -56,6 +56,11 @@ Brotpreis gelagt (im ggplot)
 
 ![](images/bread_prices.png)
 
+# Der Einfluss von Vulkanen auf das Klima
+Große Vulkanausbrüche schleudern nicht nur Asche, sondern vor allem **Schwefelgase** in die **Stratosphäre**. Dort bilden sich **Schwefelaerosole**, die wie ein feiner Schleier wirken: Sie reflektieren Sonnenstrahlung zurück ins All und lassen dadurch weniger Wärme zur Erdoberfläche gelangen. In den Jahren nach einem starken Ausbruch kühlt sich das Klima oft kurzfristig ab. Dieser Effekt zeigt sich in den Temperaturrekonstruktionen ebenso wie in der **SAOD-Kurve (stratospheric aerosol optical depth = Maß für die Aerosoltrübung)**.
+
+![](images/vulkane.png)
+
 # Dürre in Mitteleuropa 1540
 Die **extreme Trockenheit des Jahres 1540** gilt als **eines der gravierendsten Klimaereignisse in Mitteleuropa**. Sie wirkte sich deutlich auf Landschaften, Ökosysteme und die damalige Bevölkerung aus. Über rund **elf Monate** hinweg fiel in vielen Regionen Europas kaum Niederschlag, was zu einer **Megadürre** führte. Verantwortlich war eine außergewöhnlich stabile **Hochdruckwetterlage („Omegalage“)**, die atlantische Tiefdruckgebiete blockierte und Mitteleuropa **langanhaltend trockenes, heißes Wetter** brachte, während im westlichen Russland gleichzeitig eher kühle und feuchte Bedingungen herrschten.
 
