@@ -18,12 +18,12 @@ Für die vollständige Nutzung von ClimeApp empfehlen wir die Anwendung auf eine
 
 
 # Tambora 1815 – Klima sichtbar machen mit ClimeApp
-Im April 1815 brach der indonesische Vulkan Tambora aus – einer der gewaltigsten Vulkanausbrüche der letzten Jahrhunderte. Die Explosion beeinflusste das Klima und die Gesellschaft weltweit. 
+Im April 1815 brach der **indonesische Vulkan Tambora** aus – einer der gewaltigsten Vulkanausbrüche der letzten Jahrhunderte. Die Explosion beeinflusste das **Klima und die Gesellschaft** weltweit. 
 
 
 
 ## Temperatur Anomalie 1816
-Die folgende Karte zeigt, wie stark Temperatur und Niederschlag im Sommer 1816 vom Normalzustand abwichen. Solche Abweichungen nennt man Anomalien. Grundlage dafür ist eine sogenannte Referenzperiode, die als Vergleichsklima dient. In diesem Fall wurde die Referenzperiode 1790 bis 1805 gewählt.
+Die folgende Karte zeigt, wie stark **Temperatur und Niederschlag** im **Sommer 1816** vom Normalzustand abwichen. Solche Abweichungen nennt man **Anomalien**. Grundlage dafür ist eine sogenannte **Referenzperiode**, die als Vergleichsklima dient. In diesem Fall wurde die Referenzperiode **1790 bis 1805** gewählt.
 
 Auf der Karte ist erkennbar, das grosse Teile Europas deutlich kühler und vielerorts auch nasser waren als üblich - eine Folge des Ausbruchs im Vorjahr.
 
@@ -48,14 +48,16 @@ Mit ClimeApp gibt es noch viel mehr Möglichkeiten. Zum Beispiel kannst du die R
 :::
 
 ## Auswirkungen auf die Gesellschaft
-Der Ausbruch des Tambora hatte nicht nur klimatische, sondern auch gesellschaftliche Folgen. Besonders deutlich zeigte sich dies beim Anstieg der Getreide- und Brotpreise. Die anhaltende Kälte und der viele Regen führten zu Missernten – und damit zu Hunger, Not und großer Unsicherheit in der Bevölkerung.
+Der Ausbruch des Tambora hatte nicht nur klimatische, sondern auch gesellschaftliche Folgen. Besonders deutlich zeigte sich dies beim **Anstieg der Getreide- und Brotpreise**. Die anhaltende Kälte und der viele Regen führten zu **Missernten** – und damit zu Hunger, Not und großer Unsicherheit in der Bevölkerung.
 
-Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die Entwicklung der durchschnittlichen Sommertemperatur und der Brotpreise. Erkennbar ist, dass die Temperaturen ungewöhnlich niedrig waren, während die Brotpreise deutlich über dem Durchschnitt lagen.
+Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die **Entwicklung der durchschnittlichen Sommertemperatur und der Brotpreise**. Erkennbar ist, dass die Temperaturen ungewöhnlich niedrig waren, während die Brotpreise deutlich über dem Durchschnitt lagen.
+
+Brotpreis gelagt (im ggplot)
 
 ![](images/bread_prices.png)
 
 # Dürre in Mitteleuropa 1540
-Die extreme Trockenheit des Jahres 1540 gilt als eines der gravierendsten Klimaereignisse in Mitteleuropa. Sie wirkte sich deutlich auf Landschaften, Ökosysteme und die damalige Bevölkerung aus. Rekonstruktionen aus historischen Quellen und paläoklimatischen Studien deuten darauf hin, dass über rund elf Monate hinweg in vielen Regionen Europas kaum Niederschlag fiel – ein Ereignis, das als Megadürre eingestuft werden könnte. Verantwortlich war eine außergewöhnlich stabile Hochdruckwetterlage („Omegalage“), die atlantische Tiefdruckgebiete blockierte und Mitteleuropa langanhaltend trockenes, heißes Wetter brachte, während im westlichen Russland gleichzeitig eher kühle und feuchte Bedingungen herrschten.
+Die **extreme Trockenheit des Jahres 1540** gilt als **eines der gravierendsten Klimaereignisse in Mitteleuropa**. Sie wirkte sich deutlich auf Landschaften, Ökosysteme und die damalige Bevölkerung aus. Über rund **elf Monate** hinweg fiel in vielen Regionen Europas kaum Niederschlag, was zu einer **Megadürre** führte. Verantwortlich war eine außergewöhnlich stabile **Hochdruckwetterlage („Omegalage“)**, die atlantische Tiefdruckgebiete blockierte und Mitteleuropa **langanhaltend trockenes, heißes Wetter** brachte, während im westlichen Russland gleichzeitig eher kühle und feuchte Bedingungen herrschten.
 
 
 <div class="button-row">
@@ -70,7 +72,7 @@ Die extreme Trockenheit des Jahres 1540 gilt als eines der gravierendsten Klimae
 
 
 ## Räumliche Verteilung der Quellen
-Die folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540. Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist
+Die folgende Karte zeigt die **räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540**. Eingetragen sind unterschiedliche **Klimaarchive**, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: **Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme)**. Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist
 
 <div id="drought-map" style="height:520px; margin:1rem 0;"></div>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
@@ -83,7 +85,6 @@ Lade in ClimeApp deine eigenen Datensätze hoch.
 :::
 
 # Teste dein Wissen
-
 
 <div id="quiz"></div>
 <button id="submit" class="quiz-button">Resultate anzeigen</button>

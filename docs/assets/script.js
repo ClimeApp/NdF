@@ -94,7 +94,7 @@
 // Fragen und Antworten
 var myQuestions = [
   {
-    question: "Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
+    question: "1. Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
     answers: {
       a: 'Afrika',
       b: 'Südamerika',
@@ -103,7 +103,7 @@ var myQuestions = [
     correctAnswer: 'c'
   },
   {
-    question: "Das Jahr 1816 wird auch genannt …",
+    question: "2. Das Jahr 1816 wird auch genannt …",
     answers: {
       a: 'Das Jahr des Vulkans',
       b: 'Das Jahr ohne Sommer',
@@ -112,7 +112,7 @@ var myQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: "Welche Folgen hatte der Ausbruch in Europa?",
+    question: "3. Welche Folgen hatte der Ausbruch in Europa?",
     answers: {
       a: 'Missernten',
       b: 'Günstige Brotpreise',
@@ -121,16 +121,34 @@ var myQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "In welchem Jahr stiegen in der Schweiz die Brotpreise besonders stark?",
+    question: "4. In welchem Jahr stiegen in der Schweiz die Brotpreise besonders stark?",
     answers: {
-      a: '1816',
-      b: '1815',
-      c: '1814'
+      a: '1817',
+      b: '1816',
+      c: '1815'
     },
     correctAnswer: 'a'
   },
   {
-    question: "Wie lange hielt die extreme Trockenheit von 1540 ungefähr an?",
+    question: "5. Welche Herausforderungen bestehen bei Klimarekonstruktionen?",
+    answers: {
+      a: 'Ungenaue Messinstrumente',
+      b: 'Mehr Daten aus der Nord- als aus der Südhemisphäre',
+      c: 'Keine Daten für den Winter'
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: "6. Inwiefern können Vulkanausbrüche hilfreich sein?",
+    answers: {
+      a: 'Kurzfristige Abkühlung durch Schwefelaerosole in der Luft',
+      b: 'Bessere Weinernte durch Schwefelung der Trauben',
+      c: 'Gesündere Kondition durch geschwefeltes Trinkwasser'
+    },
+    correctAnswer: 'a'
+  },
+  {
+    question: "7. Wie lange hielt die extreme Trockenheit von 1540 ungefähr an?",
     answers: {
       a: '2 Monate',
       b: '5 Monate',
@@ -139,7 +157,7 @@ var myQuestions = [
     correctAnswer: 'c'
   },
     {
-    question: "Aus welcher Zeitspanne stammen die ModE-RA-Daten?",
+    question: "8. Aus welcher Zeitspanne stammen die ModE-RA-Daten?",
     answers: {
       a: '1400 - 1800',
       b: '1540 - 2000',
@@ -213,6 +231,8 @@ function showResults(questions, quizContainer, resultsContainer){
 
   resultsContainer.innerHTML =
     'Du hast ' + numCorrect + ' von ' + questions.length + ' Fragen richtig beantwortet.';
+    resultsContainer.style.display = "block";
+
 }
 
 
@@ -276,7 +296,7 @@ restartButton.onclick = function() {
   const typeLabels = {
     "ice_proxy":"Gletschereis",
     "lake_sediment_proxy":"Seesedimente",
-    "tree_proxy":"Bäume",
+    "tree_proxy":"Baumringe",
     "documentary_proxy":"Dokumente",
     "speleothem_proxy":"Speläotheme"
   };
