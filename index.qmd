@@ -52,7 +52,6 @@ Der Ausbruch des Tambora hatte nicht nur klimatische, sondern auch gesellschaftl
 
 Die untere Grafik veranschaulicht diesen Zusammenhang: Sie zeigt die **Entwicklung der durchschnittlichen Sommertemperatur und der Brotpreise**. Erkennbar ist, dass die Temperaturen ungewöhnlich niedrig waren, während die Brotpreise deutlich über dem Durchschnitt lagen.
 
-Brotpreis gelagt (im ggplot)
 
 ![](images/bread_prices.png)
 

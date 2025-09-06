@@ -201,7 +201,6 @@ function showQuestions(questions, quizContainer){
 
   // Resultate anzeigen
 function showResults(questions, quizContainer, resultsContainer){
-
   const answerContainers = quizContainer.querySelectorAll('.answers');
   let numCorrect = 0;
 
@@ -221,12 +220,10 @@ function showResults(questions, quizContainer, resultsContainer){
       const correctLabel = container.querySelector('input[value="'+correct+'"]').parentNode;
       correctLabel.classList.add('is-correct');
     } else {
-      
       if (userAnswer) {
         const wrongLabel = container.querySelector('input[value="'+userAnswer+'"]').parentNode;
         if (wrongLabel) wrongLabel.classList.add('is-wrong');
       }
-
       const correctLabel = container.querySelector('input[value="'+correct+'"]').parentNode;
       if (correctLabel) correctLabel.classList.add('is-correct');
     }
@@ -234,10 +231,14 @@ function showResults(questions, quizContainer, resultsContainer){
 
   resultsContainer.innerHTML =
     'Du hast ' + numCorrect + ' von ' + questions.length + ' Fragen richtig beantwortet.';
-    resultsContainer.style.display = "block";
+  resultsContainer.style.display = "block";
 
+  // 🎉 Effekt bei voller Punktzahl
+if (numCorrect === questions.length) {
+  launchConfetti({ duration: 3500, particleCount: 260 });
+
+  }
 }
-
 
   showQuestions(questions, quizContainer);
   
@@ -260,6 +261,58 @@ restartButton.onclick = function() {
 }
 
 
+function launchConfetti() {
+  // Canvas erstellen (nur einmal)
+  let canvas = document.getElementById("confetti-canvas");
+  if (!canvas) {
+    canvas = document.createElement("canvas");
+    canvas.id = "confetti-canvas";
+    document.body.appendChild(canvas);
+  }
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  // Partikel erzeugen
+  const colors = ["#E91E63", "#FBC02D", "#3F51B5", "#4CAF50", "#FF5722", "#9C27B0"];
+  const particles = Array.from({ length: 300 }, () => ({
+    x: Math.random() * canvas.width,
+    y: -10,
+    size: Math.random() * 6 + 4,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    speedX: (Math.random() - 0.5) * 2,
+    speedY: Math.random() * 3 + 2,
+    rotation: Math.random() * Math.PI,
+    rotationSpeed: (Math.random() - 0.5) * 0.2
+  }));
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      p.x += p.speedX;
+      p.y += p.speedY;
+      p.rotation += p.rotationSpeed;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rotation);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+      ctx.restore();
+    });
+  }
+
+  function animate() {
+    draw();
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // nach 5 Sekunden automatisch entfernen
+  setTimeout(() => {
+    canvas.remove();
+  }, 5000);
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
