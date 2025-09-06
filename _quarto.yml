@@ -23,7 +23,9 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
-        text: About
+        text: Über uns
+      - href: quellen.qmd
+        text: Quellen
     
 
 format:

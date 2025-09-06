@@ -79,6 +79,42 @@ p {
   font-weight: bold;
 }
 
+:root { --marker-col: 2.2rem; }  /* Breite der linken Marker-Spalte */
+
+.question-block { margin: 0 0 0.8em 0; }
+
+.question-line {
+  display: grid;
+  grid-template-columns: var(--marker-col) 1fr;
+  column-gap: 0.5rem;
+  align-items: start;
+  margin-bottom: 0.25em;
+}
+
+.q-number {
+  width: var(--marker-col);
+  font-weight: 700;
+  text-align: center; /* bei Bedarf left/right */
+}
+
+.q-text { font-weight: 700; }
+
+.answers { margin: 0; }
+
+.answers .answer {
+  display: grid;
+  grid-template-columns: var(--marker-col) 1fr;
+  column-gap: 0.5rem;
+  align-items: start;
+  margin: 0.15em 0;
+}
+
+.answers .answer input[type="radio"] {
+  justify-self: center;   /* Radio-Kreise in der linken Spalte zentrieren */
+  margin: 0.15em 0 0 0;   /* feines vertikales Tuning */
+}
+
+
 .answers {
     margin-bottom: 20px;
 }
@@ -89,13 +125,11 @@ p {
   cursor: pointer;
 }
 
-/* richtige Antwort */
 .answers label.is-correct {
   color: #0d7859; 
   font-weight: bold;
 }
 
-/* falsche gewählte Antwort */
 .answers label.is-wrong {
   color: #bd2916;
   font-weight: bold;
@@ -116,7 +150,6 @@ p {
   color: white;
   box-shadow: none;
   border: 2px solid black;
-
 }
 
 #results:empty {

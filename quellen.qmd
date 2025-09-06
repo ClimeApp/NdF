@@ -1,0 +1,16 @@
+---
+title: "Quellen und Weiteres"
+---
+
+Möchtest du tiefer in ClimeApp und die Klimarekonstruktion eintauchen? Unsere Forschung ist in Fachzeitschriften veröffentlicht. Eine Auflistung unserer **Publikationen** findest du hier:
+
+R. Warren, N. Bartlome, N. Wellinger, J. Franke, R. Hand, S. Brönnimann, H. Huhtamaa: ClimeApp: data processing tool for monthly, global climate data from the ModE-RA palaeo-reanalysis, 1422 to 2008 CE. CP 20, 2645–2662 (2024). <br>
+[Zur Publikation](https://cp.copernicus.org/articles/20/2645/2024/)
+
+
+V. Valler, J. Franke, Y. Brugnara, E. Samakinwa, R. Hand, E. Lundstad, A.-M. Burgdorf, L. Lipfert, A. R. Friedman, S. Brönnimann: ModE-RA: a global monthly paleo-reanalysis of the modern era 1421 to 2008. Scientific Data 11 (2024). <br>
+[Zur Publikation](https://pubmed.ncbi.nlm.nih.gov/38182596/)
+
+
+R. Hand, E. Samakinwa, L. Lipfert, and S. Brönnimann: ModE-Sim – a medium-sized atmospheric general circulation model (AGCM) ensemble to study climate variability during the modern era (1420 to 2009). GMD 16 (2023). <br>
+[Zur Publikation](https://gmd.copernicus.org/articles/16/4853/2023/)

@@ -94,7 +94,7 @@
 // Fragen und Antworten
 var myQuestions = [
   {
-    question: "Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
+    question: "1. Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
     answers: {
       a: 'Afrika',
       b: 'Südamerika',
@@ -103,7 +103,7 @@ var myQuestions = [
     correctAnswer: 'c'
   },
   {
-    question: "Das Jahr 1816 wird auch genannt …",
+    question: "2. Das Jahr 1816 wird auch genannt …",
     answers: {
       a: 'Das Jahr des Vulkans',
       b: 'Das Jahr ohne Sommer',
@@ -112,7 +112,7 @@ var myQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: "Welche Folgen hatte der Ausbruch in Europa?",
+    question: "3. Welche Folgen hatte der Ausbruch in Europa?",
     answers: {
       a: 'Missernten',
       b: 'Günstige Brotpreise',
@@ -121,7 +121,7 @@ var myQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "In welchem Jahr stiegen in der Schweiz die Brotpreise besonders stark?",
+    question: "4. In welchem Jahr stiegen in der Schweiz die Brotpreise besonders stark?",
     answers: {
       a: '1817',
       b: '1816',
@@ -130,7 +130,7 @@ var myQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "Welche Herausforderungen bestehen bei Klimarekonstruktionen?",
+    question: "5. Welche Herausforderungen bestehen bei Klimarekonstruktionen?",
     answers: {
       a: 'Ungenaue Messinstrumente',
       b: 'Mehr Daten aus der Nord- als aus der Südhemisphäre',
@@ -139,7 +139,7 @@ var myQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: "Inwiefern können Vulkanausbrüche hilfreich sein?",
+    question: "6. Inwiefern können Vulkanausbrüche hilfreich sein?",
     answers: {
       a: 'Kurzfristige Abkühlung durch Schwefelaerosole in der Luft',
       b: 'Bessere Weinernte durch Schwefelung der Trauben',
@@ -148,7 +148,7 @@ var myQuestions = [
     correctAnswer: 'a'
   },
   {
-    question: "Wie lange hielt die extreme Trockenheit von 1540 ungefähr an?",
+    question: "7. Wie lange hielt die extreme Trockenheit von 1540 ungefähr an?",
     answers: {
       a: '2 Monate',
       b: '5 Monate',
@@ -157,7 +157,7 @@ var myQuestions = [
     correctAnswer: 'c'
   },
     {
-    question: "Aus welcher Zeitspanne stammen die ModE-RA-Daten?",
+    question: "8. Aus welcher Zeitspanne stammen die ModE-RA-Daten?",
     answers: {
       a: '1400 - 1800',
       b: '1540 - 2000',
@@ -174,30 +174,27 @@ var submitButton = document.getElementById('submit');
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
-function showQuestions(questions, quizContainer){
-  const blocks = questions.map((q, i) => {
-    const answers = Object.keys(q.answers).map(letter => `
-      <label class="answer">
-        <input type="radio" name="question${i}" value="${letter}">
-        ${q.answers[letter]}
-      </label>
-    `).join('');
+  function showQuestions(questions, quizContainer){
+    var output = [];
+    var answers;
+    for(var i=0; i<questions.length; i++){
+      answers = [];
+      for(letter in questions[i].answers){
+        answers.push(
+          '<label>'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+            + questions[i].answers[letter]
+          + '</label>'
+        );
+      }
+      output.push(
+        '<div class="question">' + questions[i].question + '</div>'
+        + '<div class="answers">' + answers.join('') + '</div>'
+      );
+    }
+    quizContainer.innerHTML = output.join('');
+  }
 
-    return `
-      <div class="question-block">
-        <div class="question-line">
-          <span class="q-number">${i + 1}.</span>
-          <span class="q-text">${q.question}</span>
-        </div>
-        <div class="answers">
-          ${answers}
-        </div>
-      </div>
-    `;
-  });
-
-  quizContainer.innerHTML = blocks.join('');
-}
 
   // Resultate anzeigen
 function showResults(questions, quizContainer, resultsContainer){

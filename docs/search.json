@@ -117,5 +117,12 @@
     "title": "ClimeApp - Klima trifft Geschichte",
     "section": "Räumliche Verteilung der Quellen",
     "text": "Räumliche Verteilung der Quellen\nDie folgende Karte zeigt die räumliche Verteilung der ModE-RA-Quellen für das Jahr 1540. Eingetragen sind unterschiedliche Klimaarchive, die Hinweise auf Temperatur- und Niederschlagsverhältnisse liefern: Gletscher, Seen, Baumringe, historische Dokumente und Tropfsteine (Speläotheme). Jeder Punkt auf der Karte steht für eine Quelle, die in die Rekonstruktion eingeflossen ist\n\n\n\n\n\n\n\n\n\n\n\n\nHinweis ClimeApp\n\n\n\n\n\nLade in ClimeApp deine eigenen Datensätze hoch."
+  },
+  {
+    "objectID": "quellen.html",
+    "href": "quellen.html",
+    "title": "Quellen und Weiteres",
+    "section": "",
+    "text": "Möchtest du tiefer in ClimeApp und die Klimarekonstruktion eintauchen? Unsere Forschung ist in Fachzeitschriften veröffentlicht. Eine Auflistung der Publikationen findest du hier:\nR. Warren, N. Bartlome, N. Wellinger, J. Franke, R. Hand, S. Brönnimann, H. Huhtamaa: ClimeApp: data processing tool for monthly, global climate data from the ModE-RA palaeo-reanalysis, 1422 to 2008 CE. CP 20, 2645–2662 (2024).  Zur Publikation\nV. Valler, J. Franke, Y. Brugnara, E. Samakinwa, R. Hand, E. Lundstad, A.-M. Burgdorf, L. Lipfert, A. R. Friedman, S. Brönnimann: ModE-RA: a global monthly paleo-reanalysis of the modern era 1421 to 2008. Scientific Data 11 (2024).  Zur Publikation\nR. Hand, E. Samakinwa, L. Lipfert, and S. Brönnimann: ModE-Sim – a medium-sized atmospheric general circulation model (AGCM) ensemble to study climate variability during the modern era (1420 to 2009). GMD 16 (2023).  Zur Publikation"
   }
 ]
