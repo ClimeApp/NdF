@@ -94,7 +94,7 @@
 // Fragen und Antworten
 var myQuestions = [
   {
-    question: "Welcher Kontinent war am stärksten vom Tabora-Ausbruch betroffen?",
+    question: "Welcher Kontinent war am stärksten vom Tambora-Ausbruch betroffen?",
     answers: {
       a: 'Afrika',
       b: 'Südamerika',
@@ -139,10 +139,10 @@ var myQuestions = [
     correctAnswer: 'b'
   },
   {
-    question: "Inwiefern können Vulkanausbrüche hilfreich sein?",
+    question: "Wofür könnten Vulkanausbrüche hilfreich sein?",
     answers: {
-      a: 'Kurzfristige Abkühlung durch Schwefelaerosole in der Luft',
-      b: 'Bessere Weinernte durch Schwefelung der Trauben',
+      a: 'Kurzfristige Abkühlung der Atmospäre durch Schwefelaerosole',
+      b: 'Bessere Weinernten durch Schwefelung der Trauben',
       c: 'Gesündere Kondition durch geschwefeltes Trinkwasser'
     },
     correctAnswer: 'a'
