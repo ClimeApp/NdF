@@ -97,7 +97,7 @@ p {
 
 .q-text { font-weight: 700; }
 
-.answers { margin: 0 0 20px 0; }
+.answers { margin: 0 0 0 0; }
 
 .answers .answer {
   display: grid;
